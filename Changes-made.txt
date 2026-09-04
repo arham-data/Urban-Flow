@@ -1,1 +1,3 @@
 removed link import and link to sign up in landing-page.jsx
+
+removed link import and link to sign up in login.jsx
