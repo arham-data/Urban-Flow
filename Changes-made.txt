@@ -1,0 +1,1 @@
+removed link import and link to sign up in landing-page.jsx
