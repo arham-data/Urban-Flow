@@ -12,8 +12,8 @@ db = mysql.connector.connect(
     database = os.getenv("MYSQLDATABASE")
 )
 
-@app.route("/api/signup", methods=["GET"])
-def signup():
+@app.route("/api/test", methods=["GET"])
+def test():
     return jsonify({
         "message": "API is working"
     })
