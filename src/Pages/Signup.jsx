@@ -1,4 +1,5 @@
 import { useState } from "react" 
+import { Link } from "react-router-dom"
 
 function SignUp(){
 
@@ -69,7 +70,7 @@ function SignUp(){
 
                 <div className="form-bottom">
                     <button onClick={HandleSubmit}>Submit</button>
-                    <p>Don't Have a account<span>Sign Up!</span> </p>
+                    <p>Already have an account <Link to="/login"><span>Login</span></Link> </p>
                 </div>
             </div>
         </main>

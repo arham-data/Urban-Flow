@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Landing_page(){
 
     return(
@@ -14,7 +16,7 @@ function Landing_page(){
                     <p>Resources</p>
                     <p>Impact</p>
                     <p>Login</p>
-                    <button>Get Started <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button>
+                    <Link to="/signup"><button>Get Started <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button></Link>
                 </div>
             </nav>
 
@@ -169,7 +171,7 @@ function Landing_page(){
                 <div className="s5-2">
                     <h2>Help build a more<br /><em>efficient city.</em></h2>
                     <p>Connect resources with demand and make better use of what cities already have.</p>
-                    <button>Get Started <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button>
+                    <Link to="/signup"><button>Get Started <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button></Link>
                 </div>
             </div>
 
