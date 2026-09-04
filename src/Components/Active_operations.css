@@ -1,0 +1,179 @@
+.ao-page{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 2% 2.5%;
+    font-family: "DM Sans", sans-serif;
+    background:
+        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
+        #eef0f6;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ao-title h1{
+    margin: 0;
+    font-size: 2rem;
+    color: #1a1a2e;
+    font-weight: 700;
+}
+.ao-title p{
+    margin: 4px 0 0 0;
+    color: #5a5f7a;
+    font-size: 0.95rem;
+}
+
+.ao-layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+.ao-map{
+    background:
+        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.15), transparent 60%),
+        #1a1a2e;
+    border: 1px solid rgba(26,26,46,0.1);
+    border-radius: 18px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.ao-map ion-icon{
+    font-size: 4rem;
+    color: #7c83ff;
+}
+.ao-map-label{
+    color: #a0a0b8;
+    font-size: 0.85rem;
+}
+
+.ao-list{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.ao-card{
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(26,26,46,0.1);
+    border-radius: 18px;
+    padding: 18px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.ao-card-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ao-type{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.ao-type ion-icon{
+    color: #7c83ff;
+    font-size: 1.2rem;
+}
+.ao-status{
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+.ao-status.in-transit{ color: #2c7fd6; background: rgba(77,159,255,0.15); }
+.ao-status.in-progress{ color: #b97a12; background: rgba(245,166,35,0.16); }
+
+.ao-route{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5a5f7a;
+    font-size: 0.85rem;
+}
+.ao-route ion-icon{
+    color: #7c83ff;
+    font-size: 0.95rem;
+}
+
+.ao-progress{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ao-progress-track{
+    flex: 1;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(26,26,46,0.08);
+    overflow: hidden;
+}
+.ao-progress-fill{
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #7c83ff, #4d9fff);
+}
+.ao-progress-num{
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #5a5f7a;
+}
+
+.ao-meta{
+    display: flex;
+    justify-content: space-between;
+    color: #8a8fa8;
+    font-size: 0.78rem;
+}
+
+.ao-actions{
+    display: flex;
+    gap: 8px;
+}
+.ao-btn{
+    flex: 1;
+    background: #1a1a2e;
+    color: #ffffff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.ao-btn:hover{
+    background: #7c83ff;
+}
+.ao-btn-secondary{
+    background: rgba(255,255,255,0.6);
+    color: #1a1a2e;
+    border: 1px solid rgba(26,26,46,0.1);
+}
+.ao-btn-secondary:hover{
+    background: rgba(124,131,255,0.1);
+}
+.ao-btn-input{
+    background: #3bce7c;
+}
+.ao-btn-input:hover{
+    background: #2baa65;
+}
+
+@media (max-width: 900px){
+    .ao-layout{
+        grid-template-columns: 1fr;
+    }
+}
