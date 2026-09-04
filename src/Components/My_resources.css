@@ -1,0 +1,203 @@
+.mr-page{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 2% 2.5%;
+    font-family: "DM Sans", sans-serif;
+    background:
+        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
+        #eef0f6;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mr-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mr-title h1{
+    margin: 0;
+    font-size: 2rem;
+    color: #1a1a2e;
+    font-weight: 700;
+}
+.mr-title p{
+    margin: 4px 0 0 0;
+    color: #5a5f7a;
+    font-size: 0.95rem;
+}
+.mr-add-btn{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a1a2e;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+.mr-add-btn ion-icon{
+    font-size: 1.1rem;
+}
+.mr-add-btn:hover{
+    background: #7c83ff;
+}
+
+.mr-filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(26,26,46,0.1);
+    border-radius: 16px;
+    padding: 14px;
+    backdrop-filter: blur(10px);
+}
+
+.mr-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 18px;
+}
+
+.mr-card{
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(26,26,46,0.1);
+    border-radius: 18px;
+    padding: 18px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.mr-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(26,26,46,0.14);
+    border-color: rgba(124,131,255,0.4);
+}
+
+.mr-card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mr-type-badge{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(124,131,255,0.12);
+    color: #7c83ff;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+.mr-type-badge ion-icon{
+    font-size: 0.9rem;
+}
+.mr-status-pill{
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+.mr-status-pill.status-available{ color: #1f9d5a; background: rgba(59,206,124,0.14); }
+.mr-status-pill.status-partial{ color: #b97a12; background: rgba(245,166,35,0.16); }
+.mr-status-pill.status-unavailable{ color: #e0455f; background: rgba(224,69,95,0.12); }
+
+.mr-card-title h3{
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    font-weight: 700;
+}
+.mr-updated{
+    font-size: 0.75rem;
+    color: #8a8fa8;
+    margin-top: 3px;
+    display: block;
+}
+
+.mr-stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(26,26,46,0.06);
+    border-radius: 12px;
+    padding: 12px;
+}
+.mr-stat{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.mr-stat-label{
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8a8fa8;
+    font-weight: 600;
+}
+.mr-stat-value{
+    font-size: 0.88rem;
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+.mr-card-actions{
+    display: flex;
+    gap: 8px;
+}
+.mr-btn{
+    flex: 1;
+    background: #1a1a2e;
+    color: #ffffff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.mr-btn:hover{
+    background: #7c83ff;
+}
+.mr-btn-secondary{
+    background: rgba(255,255,255,0.6);
+    color: #1a1a2e;
+    border: 1px solid rgba(26,26,46,0.1);
+}
+.mr-btn-secondary:hover{
+    background: rgba(124,131,255,0.1);
+}
+.mr-btn-danger{
+    background: rgba(224,69,95,0.12);
+    color: #e0455f;
+}
+.mr-btn-danger:hover{
+    background: #e0455f;
+    color: #ffffff;
+}
+
+@media (max-width: 720px){
+    .mr-header{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
