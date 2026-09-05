@@ -32,6 +32,14 @@ function SignUp(){
         }else{
             console.log(result.message)
         }
+
+        setFormData({
+            name:"",
+            email:"",
+            password:"",
+            number:"",
+            confirmPassword:""
+        })
     }
 
 
@@ -66,17 +74,17 @@ function SignUp(){
                  </div>
                 <form onSubmit={HandleSubmit}>
                     <p>Name</p>
-                    <input name="name" value={formData.name} onChange={HandleChange} placeholder="Name"></input>
+                    <input name="name" value={formData.name} onChange={HandleChange} placeholder="Name" required></input>
                     <p>Username</p>
-                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username"></input>
+                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username" required></input>
                     <p>E-mail</p>
-                    <input name="email" value={formData.email} onChange={HandleChange} placeholder="E-mail"></input>
+                    <input name="email" value={formData.email} onChange={HandleChange} placeholder="E-mail" required></input>
                     <p>Password</p>
-                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password"></input>
+                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password" required></input>
                     <p>Phone Number</p>
-                    <input name="number" value={formData.number} onChange={HandleChange} placeholder="Phone Number"></input>
+                    <input name="number" value={formData.number} onChange={HandleChange} placeholder="Phone Number" required></input>
                     <p>Confirm Password</p>
-                    <input name="confirmPassword" value={formData.confirmPassword} onChange={HandleChange} placeholder="Confirm Password"></input>
+                    <input name="confirmPassword" value={formData.confirmPassword} onChange={HandleChange} placeholder="Confirm Password" required></input>
                 </form>
 
                 <div className="form-bottom">
