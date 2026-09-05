@@ -40,6 +40,8 @@ function SignUp(){
             email:"",
             password:""
         })
+
+        console.log("atleast the button is working")
     }
 
 
