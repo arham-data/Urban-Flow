@@ -17,11 +17,30 @@ function Login(){
         }))
     }
 
-    function HandleSubmit(event){
+    async function HandleSubmit(event){
         event.preventDefault()
-        console.log(FormData)
+
+        const response = await fetch(
+            "https://backend-production-5a55.up.railway.app/api/signup",
+            {
+                method: "POST",
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(formData)
+            }
+        )
+
+        const result = await response.json()
+
+        if (response.ok){
+            console.log("login api is working")
+        } else {
+            console.log(result.message)
+        }
+
         setFormData({
-            username: "",
+            username:"",
             password:""
         })
     }
@@ -45,9 +64,9 @@ function Login(){
                  </div>
                 <form onSubmit={HandleSubmit}>
                     <p>Username</p>
-                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username"></input>
+                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username" required></input>
                     <p>Password</p>
-                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password"></input>
+                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password" required></input>
                     
                 </form>
 

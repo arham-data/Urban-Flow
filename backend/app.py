@@ -33,6 +33,17 @@ def signup():
     }),201
 
 
+@app.route("api/login", methods=["POST"])
+def login():
+    login_data = request.get_json()
+
+    username = login_data["username"]
+
+    return jsonify({
+        "message": "login api is working"
+    })
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
