@@ -14,6 +14,8 @@ db = mysql.connector.connect(
     database = os.getenv("MYSQLDATABASE")
 )
 
+cursor = db.cursor()
+
 @app.route("/api/test", methods=["GET"])
 def test():
     return jsonify({
@@ -23,10 +25,17 @@ def test():
 
 @app.route("/api/signup", methods=["POST"])
 def signup():
-    data = request.get_json()
+    signup_data = request.get_json()
 
-    username = data["username"]
-    password = data["password"]
+    name = signup_data["name"]
+    username = signup_data["username"]
+    number = signup_data["number"]
+    email = signup_data["email"]
+    password = signup_data["password"] 
+
+    cursor.execute("INSERT INTO USER (NAME, USERNAME, PHONE_NUMBER, E_MAIL, PASSWORD) VALUES (%s,%s,%s,%s,%s)",(name,username,number,email,password))
+
+    db.commit()
 
     return jsonify({
         "message": "signup api working"

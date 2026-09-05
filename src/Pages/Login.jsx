@@ -72,7 +72,7 @@ function Login(){
 
                 <div className="form-bottom">
                     <button onClick={HandleSubmit}>Submit</button>
-                    <p>Don't have an account <Link to="/singup"><span>Sign Up!</span></Link></p>
+                    <p>Don't have an account <Link to="/signup"><span>Sign Up!</span></Link></p>
                 </div>
             </div>
         </main>

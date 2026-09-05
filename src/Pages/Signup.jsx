@@ -5,10 +5,10 @@ function SignUp(){
 
     const [formData, setFormData] = useState({
         name:"",
-        email:"",
-        password:"",
+        username:"",        
         number:"",
-        confirmPassword:""
+        email:"",
+        password:""
     })
 
     async function HandleSubmit(event){
@@ -35,10 +35,10 @@ function SignUp(){
 
         setFormData({
             name:"",
-            email:"",
-            password:"",
+            username:"",
             number:"",
-            confirmPassword:""
+            email:"",
+            password:""
         })
     }
 
@@ -77,14 +77,12 @@ function SignUp(){
                     <input name="name" value={formData.name} onChange={HandleChange} placeholder="Name" required></input>
                     <p>Username</p>
                     <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username" required></input>
+                    <p>Phone Number</p>
+                    <input name="number" value={formData.number} onChange={HandleChange} placeholder="Phone Number" type="number" required></input>
                     <p>E-mail</p>
                     <input name="email" value={formData.email} onChange={HandleChange} placeholder="E-mail" required></input>
                     <p>Password</p>
                     <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password" required></input>
-                    <p>Phone Number</p>
-                    <input name="number" value={formData.number} onChange={HandleChange} placeholder="Phone Number" required></input>
-                    <p>Confirm Password</p>
-                    <input name="confirmPassword" value={formData.confirmPassword} onChange={HandleChange} placeholder="Confirm Password" required></input>
                 </form>
 
                 <div className="form-bottom">
