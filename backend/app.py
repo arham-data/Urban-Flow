@@ -1,4 +1,4 @@
-from flask import Flask, Request, jsonify
+from flask import Flask, request, jsonify
 import mysql.connector
 import os
 
@@ -17,6 +17,20 @@ def test():
     return jsonify({
        "message":"API IS WORKING"
     })
+
+
+@app.route("/api/signup", methods=["POST"])
+def signup():
+    data = request.get_json()
+
+    username = data["username"]
+    password = data["password"]
+
+    return jsonify({
+        "message": "signup api working"
+    }),201
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

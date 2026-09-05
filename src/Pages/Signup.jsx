@@ -11,18 +11,29 @@ function SignUp(){
         confirmPassword:""
     })
 
-    function HandleSubmit(event){
+    async function HandleSubmit(event){
         event.preventDefault()
-        console.log(formData)
-        setFormData({
-            name:"",
-            username:"",
-            email:"",
-            password:"",
-            number:"",
-            confirmPassword:""
-        })
+
+        const response = await fetch(
+            "backend-production-5a55.up.railway.app/api/signup",
+            {
+                method: "POST",
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(formData)
+            }
+        )
+
+        const result = await response.json()
+
+        if (response.ok){
+            console.log("signup api is working")
+        }else{
+            console.log(result.message)
+        }
     }
+
 
     function HandleChange(event){
         const {name,value} = event.target
