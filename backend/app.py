@@ -33,7 +33,7 @@ def signup():
     }),201
 
 
-@app.route("api/login", methods=["POST"])
+@app.route("/api/login", methods=["POST"])
 def login():
     login_data = request.get_json()
 
