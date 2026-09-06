@@ -47,6 +47,13 @@ def login():
     login_data = request.get_json()
 
     username = login_data["username"]
+    password = login_data["password"]
+
+    cursor.execute("SELECT * FROM USER")
+
+    result = cursor.fetchall()
+
+    
 
     return jsonify({
         "message": "login api is working"

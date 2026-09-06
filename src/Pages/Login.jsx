@@ -21,7 +21,7 @@ function Login(){
         event.preventDefault()
 
         const response = await fetch(
-            "https://backend-production-5a55.up.railway.app/api/signup",
+            "https://backend-production-4068.up.railway.app/api/login",
             {
                 method: "POST",
                 headers:{
