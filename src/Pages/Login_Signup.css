@@ -8,10 +8,12 @@
     display: flex;
     background: #f4f3ef;
     color: #202522;
-    box-sizing: border-box;
-    padding: 40px 5vw;
+    padding: 35px 5vw;
     gap: 5vw;
     font-family: "Inter", "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
 }
 
 
@@ -76,14 +78,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     background: #ffffff;
     border: 1px solid #deded8;
     border-radius: 24px;
-
-    padding: 42px;
+    padding: 20px;
     box-sizing: border-box;
-
     box-shadow: 0 18px 50px rgba(32, 37, 34, 0.07);
 }
 
@@ -93,15 +92,13 @@
    ================================ */
 
 .form-head {
-    margin-bottom: 35px;
+    margin-bottom: 0px;
 }
 
 .form-head p {
     margin: 0;
     padding: 0;
-
-    font-size: 2rem;
-    line-height: 1.1;
+    font-size: 2rem; 
     font-weight: 600;
     letter-spacing: -0.035em;
 }
@@ -114,7 +111,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 3px;
 }
 
 form p {
@@ -128,7 +125,7 @@ form input {
     width: 100%;
     box-sizing: border-box;
 
-    padding: 14px 15px;
+    padding: 7px 15px;
 
     background: #f7f7f4;
 
