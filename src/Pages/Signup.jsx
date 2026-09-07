@@ -1,7 +1,9 @@
 import { useState } from "react" 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function SignUp(){
+
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
         name:"",
@@ -42,6 +44,8 @@ function SignUp(){
         })
 
         console.log("atleast the button is working")
+
+        navigate("/dashboard")
     }
 
 
