@@ -6,8 +6,8 @@
     padding: 2% 2.5%;
     font-family: "DM Sans", sans-serif;
     background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
-        #eef0f6;
+        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
+        #f4f5f2;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -17,12 +17,12 @@
 .an-title h1{
     margin: 0;
     font-size: 2rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .an-title p{
     margin: 4px 0 0 0;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.95rem;
 }
 
@@ -36,23 +36,23 @@
     flex-direction: column;
     gap: 4px;
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 16px;
     padding: 18px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .an-kpi-label{
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #8a8fa8;
+    color: #88938c;
     font-weight: 600;
 }
 .an-kpi-value{
     font-size: 1.6rem;
     font-weight: 700;
-    color: #1a1a2e;
+    color: #263d32;
 }
 .an-kpi-delta{
     font-size: 0.8rem;
@@ -63,11 +63,11 @@
 
 .an-chart-section{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .an-section-head{
     display: flex;
@@ -76,13 +76,13 @@
     margin-bottom: 16px;
 }
 .an-section-head ion-icon{
-    color: #7c83ff;
+    color: #496b5a;
     font-size: 1.2rem;
 }
 .an-section-head h2{
     margin: 0;
     font-size: 1.1rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 
@@ -105,7 +105,7 @@
     width: 100%;
     max-width: 44px;
     border-radius: 8px 8px 0 0;
-    background: linear-gradient(180deg, #7c83ff, #4d9fff);
+    background: linear-gradient(180deg, #557561, #8da695);
     transition: filter 0.2s;
 }
 .an-bar:hover{
@@ -113,7 +113,7 @@
 }
 .an-bar-label{
     font-size: 0.72rem;
-    color: #8a8fa8;
+    color: #88938c;
 }
 
 .an-insights{
@@ -123,11 +123,11 @@
 }
 .an-section{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .an-list{
     display: flex;
@@ -141,7 +141,7 @@
 }
 .an-list-name{
     width: 110px;
-    color: #1a1a2e;
+    color: #263d32;
     font-size: 0.82rem;
     font-weight: 600;
     flex-shrink: 0;
@@ -150,13 +150,13 @@
     flex: 1;
     height: 8px;
     border-radius: 999px;
-    background: rgba(26,26,46,0.08);
+    background: rgba(38,61,50,0.08);
     overflow: hidden;
 }
 .an-list-fill{
     height: 100%;
     border-radius: 999px;
-    background: #7c83ff;
+    background: #496b5a;
 }
 .an-list-fill.fill-blue{ background: #4d9fff; }
 .an-list-fill.fill-green{ background: #3bce7c; }
@@ -165,7 +165,7 @@
 .an-list-num{
     width: 40px;
     text-align: right;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.8rem;
     font-weight: 600;
 }

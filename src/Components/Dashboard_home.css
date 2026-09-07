@@ -6,8 +6,8 @@
     padding: 2% 2.5%;
     font-family: "DM Sans", sans-serif;
     background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
-        #eef0f6;
+        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
+        #f4f5f2;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -20,25 +20,25 @@
     justify-content: space-between;
     gap: 20px;
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 24px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .dhome-hero-text h1{
     margin: 0;
     font-size: 1.8rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .dhome-hero-text p{
     margin: 6px 0 0 0;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.92rem;
 }
 .dhome-hero-btn{
-    background: #1a1a2e;
+    background: #263d32;
     color: #ffffff;
     border: none;
     padding: 11px 18px;
@@ -51,7 +51,7 @@
     white-space: nowrap;
 }
 .dhome-hero-btn:hover{
-    background: #7c83ff;
+    background: #496b5a;
 }
 
 .dhome-grid{
@@ -64,25 +64,25 @@
     flex-direction: column;
     gap: 4px;
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 14px;
     padding: 16px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .dhome-tile ion-icon{
     font-size: 1.4rem;
-    color: #7c83ff;
+    color: #496b5a;
     margin-bottom: 6px;
 }
 .dhome-tile-value{
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a2e;
+    color: #263d32;
 }
 .dhome-tile-label{
     font-size: 0.78rem;
-    color: #8a8fa8;
+    color: #88938c;
 }
 
 .dhome-sections{
@@ -92,11 +92,11 @@
 }
 .dhome-section{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .dhome-section-head{
     display: flex;
@@ -105,13 +105,13 @@
     margin-bottom: 16px;
 }
 .dhome-section-head ion-icon{
-    color: #7c83ff;
+    color: #496b5a;
     font-size: 1.2rem;
 }
 .dhome-section-head h2{
     margin: 0;
     font-size: 1.1rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 
@@ -124,7 +124,7 @@
     align-items: center;
     gap: 12px;
     padding: 11px 0;
-    border-bottom: 1px solid rgba(26,26,46,0.06);
+    border-bottom: 1px solid rgba(38,61,50,0.06);
     font-size: 0.85rem;
 }
 .dhome-activity-item:last-child{
@@ -140,12 +140,12 @@
 .activity-blue{ background: #4d9fff; }
 .activity-amber{ background: #f5a623; }
 .dhome-activity-text{
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 500;
     flex: 1;
 }
 .dhome-activity-time{
-    color: #8a8fa8;
+    color: #88938c;
     font-size: 0.75rem;
     white-space: nowrap;
 }
@@ -171,13 +171,13 @@
 .dhome-live-status.status-reserved{ color: #2c7fd6; background: rgba(77,159,255,0.15); }
 .dhome-live-status.status-unavailable{ color: #e0455f; background: rgba(224,69,95,0.12); }
 .dhome-live-text{
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.85rem;
 }
 .dhome-live-btn{
     margin-top: 8px;
-    background: rgba(124,131,255,0.12);
-    color: #7c83ff;
+    background: rgba(73,107,90,0.12);
+    color: #496b5a;
     border: none;
     padding: 10px 14px;
     border-radius: 10px;
@@ -189,7 +189,7 @@
     align-self: flex-start;
 }
 .dhome-live-btn:hover{
-    background: #7c83ff;
+    background: #496b5a;
     color: #ffffff;
 }
 

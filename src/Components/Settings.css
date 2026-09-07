@@ -6,8 +6,8 @@
     padding: 2% 2.5%;
     font-family: "DM Sans", sans-serif;
     background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
-        #eef0f6;
+        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
+        #f4f5f2;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -17,22 +17,22 @@
 .set-title h1{
     margin: 0;
     font-size: 2rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .set-title p{
     margin: 4px 0 0 0;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.95rem;
 }
 
 .set-section{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .set-section-head{
     display: flex;
@@ -41,13 +41,13 @@
     margin-bottom: 10px;
 }
 .set-section-head ion-icon{
-    color: #7c83ff;
+    color: #496b5a;
     font-size: 1.2rem;
 }
 .set-section-head h2{
     margin: 0;
     font-size: 1.1rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 
@@ -61,22 +61,22 @@
     gap: 14px;
     padding: 13px 10px;
     border-radius: 10px;
-    color: #1a1a2e;
+    color: #263d32;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 .set-pref:hover{
-    background: rgba(124,131,255,0.1);
+    background: rgba(73,107,90,0.1);
 }
 .set-pref ion-icon{
-    color: #7c83ff;
+    color: #496b5a;
     font-size: 1.2rem;
 }
 .set-pref .pref-chevron{
     margin-left: auto;
-    color: #a0a3b8;
+    color: #9aa49e;
     font-size: 0.9rem;
 }
 
@@ -85,7 +85,7 @@
     width: 40px;
     height: 22px;
     border-radius: 999px;
-    background: rgba(26,26,46,0.15);
+    background: rgba(38,61,50,0.15);
     position: relative;
 }
 .set-toggle::after{
@@ -109,7 +109,7 @@
 
 .set-value{
     margin-left: auto;
-    color: #8a8fa8;
+    color: #88938c;
     font-size: 0.85rem;
     font-weight: 500;
 }

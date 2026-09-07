@@ -6,8 +6,8 @@
     padding: 2% 2.5%;
     font-family: "DM Sans", sans-serif;
     background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
-        #eef0f6;
+        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
+        #f4f5f2;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -17,12 +17,12 @@
 .req-title h1{
     margin: 0;
     font-size: 2rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .req-title p{
     margin: 4px 0 0 0;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.95rem;
 }
 
@@ -36,20 +36,20 @@
     flex-direction: column;
     gap: 4px;
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 16px;
     padding: 18px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .req-kpi-value{
     font-size: 1.7rem;
     font-weight: 700;
-    color: #1a1a2e;
+    color: #263d32;
 }
 .req-kpi-label{
     font-size: 0.8rem;
-    color: #8a8fa8;
+    color: #88938c;
 }
 
 .req-columns{
@@ -59,11 +59,11 @@
 }
 .req-column{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
 }
 .req-column-head{
     display: flex;
@@ -72,19 +72,19 @@
     margin-bottom: 16px;
 }
 .req-column-head ion-icon{
-    color: #7c83ff;
+    color: #496b5a;
     font-size: 1.2rem;
 }
 .req-column-head h2{
     margin: 0;
     font-size: 1.1rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 
 .req-card{
     background: rgba(255,255,255,0.6);
-    border: 1px solid rgba(26,26,46,0.06);
+    border: 1px solid rgba(38,61,50,0.06);
     border-radius: 14px;
     padding: 16px;
     margin-bottom: 12px;
@@ -102,19 +102,19 @@
 .req-card-info h3{
     margin: 0;
     font-size: 1rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .req-card-info p{
     margin: 4px 0 0 0;
-    color: #5a5f7a;
+    color: #66716a;
     font-size: 0.82rem;
 }
 .req-card-info p:last-child{
     margin-top: 2px;
 }
 .req-meta{
-    color: #8a8fa8;
+    color: #88938c;
     font-size: 0.78rem;
     display: block;
     margin-top: 4px;
@@ -149,11 +149,11 @@
     white-space: nowrap;
 }
 .req-accept{
-    background: #1a1a2e;
+    background: #263d32;
     color: #ffffff;
 }
 .req-accept:hover{
-    background: #7c83ff;
+    background: #496b5a;
 }
 .req-decline{
     background: rgba(224,69,95,0.12);

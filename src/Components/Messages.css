@@ -6,8 +6,8 @@
     padding: 2% 2.5%;
     font-family: "DM Sans", sans-serif;
     background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(124,131,255,0.08), transparent 60%),
-        #eef0f6;
+        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
+        #f4f5f2;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
 .msg-title h1{
     margin: 0;
     font-size: 2rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 
@@ -30,11 +30,11 @@
 
 .msg-list{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 10px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -49,16 +49,16 @@
     transition: background-color 0.2s;
 }
 .msg-list-item.active{
-    background: rgba(124,131,255,0.12);
+    background: rgba(73,107,90,0.12);
 }
 .msg-list-item:hover{
-    background: rgba(124,131,255,0.08);
+    background: rgba(73,107,90,0.08);
 }
 .msg-avatar{
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: #7c83ff;
+    background: #496b5a;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -76,19 +76,19 @@
 }
 .msg-item-name{
     font-size: 0.88rem;
-    color: #1a1a2e;
+    color: #263d32;
     font-weight: 700;
 }
 .msg-item-preview{
     font-size: 0.78rem;
-    color: #8a8fa8;
+    color: #88938c;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .msg-item-time{
     font-size: 0.7rem;
-    color: #a0a3b8;
+    color: #9aa49e;
 }
 .msg-unread{
     background: #e0455f;
@@ -102,11 +102,11 @@
 
 .msg-thread{
     background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(26,26,46,0.08);
+    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -116,14 +116,14 @@
     align-items: center;
     gap: 12px;
     padding-bottom: 14px;
-    border-bottom: 1px solid rgba(26,26,46,0.08);
+    border-bottom: 1px solid rgba(38,61,50,0.08);
 }
 .msg-thread-user{
     display: flex;
     flex-direction: column;
 }
 .msg-thread-user strong{
-    color: #1a1a2e;
+    color: #263d32;
     font-size: 0.95rem;
 }
 .msg-online{
@@ -146,13 +146,13 @@
     line-height: 1.4;
 }
 .msg-bubble.received{
-    background: rgba(124,131,255,0.12);
-    color: #1a1a2e;
+    background: rgba(73,107,90,0.12);
+    color: #263d32;
     align-self: flex-start;
     border-bottom-left-radius: 4px;
 }
 .msg-bubble.sent{
-    background: #1a1a2e;
+    background: #263d32;
     color: #ffffff;
     align-self: flex-end;
     border-bottom-right-radius: 4px;
@@ -163,7 +163,7 @@
     align-items: center;
     gap: 10px;
     background: rgba(255,255,255,0.6);
-    border: 1px solid rgba(26,26,46,0.1);
+    border: 1px solid rgba(38,61,50,0.1);
     border-radius: 12px;
     padding: 8px 8px 8px 14px;
 }
@@ -174,10 +174,10 @@
     outline: none;
     font-family: "DM Sans", sans-serif;
     font-size: 0.88rem;
-    color: #1a1a2e;
+    color: #263d32;
 }
 .msg-input button{
-    background: #7c83ff;
+    background: #496b5a;
     color: #ffffff;
     border: none;
     width: 38px;
@@ -191,7 +191,7 @@
     transition: background-color 0.2s;
 }
 .msg-input button:hover{
-    background: #1a1a2e;
+    background: #263d32;
 }
 
 @media (max-width: 900px){
