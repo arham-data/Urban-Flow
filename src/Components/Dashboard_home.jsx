@@ -3,8 +3,7 @@ function DashboardHome(){
         <div className="dhome-page">
 
             <div className="dhome-hero">
-                <div className="dhome-hero-text">
-                    <h1>Welcome back, Arham</h1>
+                <div className="dhome-hero-text"> 
                     <p>Your live city resource network is ready. Here's what's happening right now.</p>
                 </div>
                 <button className="dhome-hero-btn">Find Resources</button>

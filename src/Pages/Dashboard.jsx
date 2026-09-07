@@ -83,9 +83,6 @@ function Dashboard(){
 
 
             <div className="db-content">
-                <div className="content-heading">
-                    Welcome Back!, Arham
-                </div>
                 <div className="content-main">
                     {(page === "home" || page === "Dashboard") && <DashboardHome/>}
                     {page === "FindResource" && <FindResource/>}
