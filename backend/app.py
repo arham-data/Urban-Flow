@@ -33,7 +33,7 @@ def signup():
     email = signup_data["email"]
     password = signup_data["password"] 
 
-    cursor.execute("INSERT INTO USER (NAME, USERNAME, PHONE_NUMBER, E_MAIL, PASSWORD) VALUES (%s,%s,%s,%s,%s)",(name,username,number,email,password))
+    cursor.execute("INSERT INTO USERS (NAME, USERNAME, PHONE_NUMBER, E_MAIL, PASSWORD) VALUES (%s,%s,%s,%s,%s)",(name,username,number,email,password))
 
     db.commit()
 
