@@ -46,7 +46,7 @@ function Login(){
             password:""
         })
 
-        Navigate("/dashboard")
+        navigate("/dashboard")
     }
 
 
