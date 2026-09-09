@@ -22,7 +22,6 @@ def test():
        "message":"API IS WORKING"
     })
 
-
 @app.route("/api/signup", methods=["POST"])
 def signup():
     try:
