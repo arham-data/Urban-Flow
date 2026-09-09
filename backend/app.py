@@ -22,24 +22,38 @@ def test():
        "message":"API IS WORKING"
     })
 
-
 @app.route("/api/signup", methods=["POST"])
 def signup():
-    signup_data = request.get_json()
+    try:
+        signup_data = request.get_json()
 
-    name = signup_data["name"]
-    username = signup_data["username"]
-    number = signup_data["number"]
-    email = signup_data["email"]
-    password = signup_data["password"] 
+        name = signup_data["name"]
+        username = signup_data["username"]
+        number = signup_data["number"]
+        email = signup_data["email"]
+        password = signup_data["password"]
 
-    cursor.execute("INSERT INTO USERS (NAME, USERNAME, PHONE_NUMBER, E_MAIL, PASSWORD) VALUES (%s,%s,%s,%s,%s)",(name,username,number,email,password))
+        cursor.execute(
+            """
+            INSERT INTO USERS
+            (NAME, USERNAME, PHONE_NUMBER, E_MAIL, PASSWORD)
+            VALUES (%s, %s, %s, %s, %s)
+            """,
+            (name, username, number, email, password)
+        )
 
-    db.commit()
+        db.commit()
 
-    return jsonify({
-        "message": "signup api working"
-    }),201
+        return jsonify({
+            "message": "signup api working"
+        }), 201
+
+    except Exception as e:
+        print("SIGNUP ERROR:", e)
+
+        return jsonify({
+            "message": str(e)
+        }), 500
 
 
 @app.route("/api/login", methods=["POST"])
