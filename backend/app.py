@@ -56,6 +56,7 @@ def signup():
         )
 
         db.commit()
+        cursor.fetchall()
 
         cursor.execute("SELECT * FROM USERS WHERE USERNAME = %s", (username,))
         new_user = cursor.fetchone()
