@@ -50,8 +50,6 @@ def signup():
         }), 201
 
     except Exception as e:
-        print("SIGNUP ERROR:", e)
-
         return jsonify({
             "message": str(e)
         }), 500
@@ -59,20 +57,24 @@ def signup():
 
 @app.route("/api/login", methods=["POST"])
 def login():
-    login_data = request.get_json()
+    try:
+        login_data = request.get_json()
 
-    username = login_data["username"]
-    password = login_data["password"]
+        username = login_data["username"]
+        password = login_data["password"]
 
-    cursor.execute("SELECT * FROM USER")
+        cursor.execute("SELECT * FROM USER")
 
-    result = cursor.fetchall()
+        result = cursor.fetchall()   
 
-    
+        return jsonify({
+            "message": "login api is working"
+        }),201
 
-    return jsonify({
-        "message": "login api is working"
-    })
+    except Exception as e:
+        return jsonify({
+            "message": str(e)
+        }), 500
 
 
 
