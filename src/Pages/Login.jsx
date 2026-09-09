@@ -53,30 +53,45 @@ function Login(){
     return(
         <main className="login-page">
             <div className="login-l">
-                <div className="l-logo">URBAN FLOW</div>
+                <div className="l-brand">UrbanFlow</div>
+
+                <div className="l-ticker">
+                    <span className="l-ticker-dot"></span>
+                    <span>Network live · Delhi NCR</span>
+                </div>
 
                 <div className="l-text">
-                    <p>Move the <br></br> city forward.</p>
+                    <p>Move the <em>city</em> forward.</p>
                     <span>A living network for the people, places, and resources that keep cities moving.</span>
+                </div>
+
+                <div className="l-footer">
+                    <span>Transport</span>
+                    <span className="l-dot">·</span>
+                    <span>Storage</span>
+                    <span className="l-dot">·</span>
+                    <span>Space</span>
                 </div>
             </div>
 
 
             <div className="login-r">
-                <div className="form-head">
-                    <p>Create your UrbanFlow account</p>
-                 </div>
-                <form onSubmit={HandleSubmit}>
-                    <p>Username</p>
-                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username" required></input>
-                    <p>Password</p>
-                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password" required></input>
-                    
-                </form>
+                <div className="auth-card">
+                    <div className="auth-eyebrow">Member access</div>
+                    <h1 className="auth-title">Welcome back.</h1>
+                    <p className="auth-sub">Sign in to your UrbanFlow account to reach your resource network.</p>
 
-                <div className="form-bottom">
-                    <button onClick={HandleSubmit}>Submit</button>
-                    <p>Don't have an account <Link to="/signup"><span>Sign Up!</span></Link></p>
+                    <form onSubmit={HandleSubmit}>
+                        <label>Username</label>
+                        <input name="username" value={formData.username} onChange={HandleChange} placeholder="e.g. arhamjain" required></input>
+                        <label>Password</label>
+                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="••••••••••" required></input>
+                    </form>
+
+                    <div className="form-bottom">
+                        <button onClick={HandleSubmit}>Sign In</button>
+                        <p>Don't have an account? <Link to="/signup"><span>Create one</span></Link></p>
+                    </div>
                 </div>
             </div>
         </main>

@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function Requests(){
     return(
         <div className="req-page">
@@ -29,7 +31,7 @@ function Requests(){
             <div className="req-columns">
                 <div className="req-column">
                     <div className="req-column-head">
-                        <ion-icon name="arrow-down-outline"></ion-icon>
+                        <Icon name="arrow-down"/>
                         <h2>Incoming Requests</h2>
                     </div>
 
@@ -72,7 +74,7 @@ function Requests(){
 
                 <div className="req-column">
                     <div className="req-column-head">
-                        <ion-icon name="arrow-up-outline"></ion-icon>
+                        <Icon name="arrow-up"/>
                         <h2>Outgoing Requests</h2>
                     </div>
 

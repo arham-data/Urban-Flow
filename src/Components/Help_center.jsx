@@ -1,20 +1,22 @@
+import Icon from "./Icon.jsx"
+
 function HelpCenter(){
     return(
         <div className="help-page">
 
             <div className="help-hero">
-                <div className="help-search">
-                    <ion-icon name="search-outline"></ion-icon>
-                    <input placeholder="How can we help you today?"></input>
-                </div>
                 <h1>Help Center</h1>
                 <p>Guides, answers and support for the UrbanFlow network.</p>
+                <div className="help-search">
+                    <Icon name="search"/>
+                    <input placeholder="How can we help you today?"></input>
+                </div>
             </div>
 
             <div className="help-grid">
                 <div className="help-card">
                     <div className="help-card-head">
-                        <ion-icon name="compass-outline"></ion-icon>
+                        <Icon name="compass"/>
                         <h2>Getting Started</h2>
                     </div>
                     <ul className="help-links">
@@ -27,7 +29,7 @@ function HelpCenter(){
 
                 <div className="help-card">
                     <div className="help-card-head">
-                        <ion-icon name="car-sport-outline"></ion-icon>
+                        <Icon name="car"/>
                         <h2>Using Resources</h2>
                     </div>
                     <ul className="help-links">
@@ -40,7 +42,7 @@ function HelpCenter(){
 
                 <div className="help-card">
                     <div className="help-card-head">
-                        <ion-icon name="card-outline"></ion-icon>
+                        <Icon name="card"/>
                         <h2>Billing &amp; Payments</h2>
                     </div>
                     <ul className="help-links">
@@ -53,7 +55,7 @@ function HelpCenter(){
 
                 <div className="help-card">
                     <div className="help-card-head">
-                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <Icon name="shield"/>
                         <h2>Trust &amp; Safety</h2>
                     </div>
                     <ul className="help-links">
@@ -67,28 +69,28 @@ function HelpCenter(){
 
             <div className="help-contact">
                 <div className="help-contact-head">
-                    <ion-icon name="headset-outline"></ion-icon>
+                    <Icon name="headset"/>
                     <h2>Still need help?</h2>
                 </div>
                 <div className="help-contact-actions">
                     <button className="help-contact-btn">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        <Icon name="chat"/>
                         Live Chat
                     </button>
                     <button className="help-contact-btn">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <Icon name="mail"/>
                         Email Support
                     </button>
                     <button className="help-contact-btn">
-                        <ion-icon name="call-outline"></ion-icon>
+                        <Icon name="call"/>
                         Call Us
                     </button>
                 </div>
             </div>
 
             <div className="help-faq">
-                <div className="set-section-head">
-                    <ion-icon name="help-circle-outline"></ion-icon>
+                <div className="help-faq-head">
+                    <Icon name="help"/>
                     <h2>Frequently Asked Questions</h2>
                 </div>
                 <div className="help-faq-item">

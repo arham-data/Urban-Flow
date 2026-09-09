@@ -1,16 +1,18 @@
+import Icon from "./Icon.jsx"
+
 function Profile(){
     return(
         <div className="profile-page">
 
             <div className="profile-hero">
                 <div className="profile-avatar">
-                    <ion-icon name="person-circle"></ion-icon>
+                    <Icon name="user"/>
                 </div>
                 <div className="profile-id">
                     <div className="profile-name-row">
                         <h1>Arham Jain</h1>
                         <span className="profile-verified">
-                            <ion-icon name="checkmark-circle"></ion-icon>
+                            <Icon name="check"/>
                             Verified
                         </span>
                     </div>
@@ -18,11 +20,11 @@ function Profile(){
                     <span className="profile-type">Business Account · Verified</span>
                     <div className="profile-meta">
                         <span>
-                            <ion-icon name="location-outline"></ion-icon>
+                            <Icon name="location"/>
                             Delhi, India
                         </span>
                         <span>
-                            <ion-icon name="calendar-outline"></ion-icon>
+                            <Icon name="calendar"/>
                             Member since 2026
                         </span>
                     </div>
@@ -32,7 +34,7 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="card-outline"></ion-icon>
+                    <Icon name="card"/>
                     <h2>Personal Information</h2>
                 </div>
                 <div className="profile-stats">
@@ -65,7 +67,7 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="business-outline"></ion-icon>
+                    <Icon name="business"/>
                     <h2>Business Information</h2>
                 </div>
                 <div className="profile-stats">
@@ -89,7 +91,7 @@ function Profile(){
                         <span className="profile-stat-label">Verification status</span>
                         <span className="profile-stat-value">
                             Verified
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"/>
                         </span>
                     </div>
                     <div className="profile-stat">
@@ -101,7 +103,7 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    <Icon name="shield"/>
                     <h2>Trust &amp; Verification</h2>
                 </div>
                 <div className="profile-trust">
@@ -118,23 +120,23 @@ function Profile(){
                     <div className="profile-verify-list">
                         <div className="profile-verify-item">
                             <span>Phone</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"/>
                         </div>
                         <div className="profile-verify-item">
                             <span>Email</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"/>
                         </div>
                         <div className="profile-verify-item">
                             <span>Identity</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"/>
                         </div>
                         <div className="profile-verify-item">
                             <span>Business</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"/>
                         </div>
                         <div className="profile-verify-item">
                             <span>Address</span>
-                            <ion-icon name="ellipse-outline"></ion-icon>
+                            <Icon name="circle"/>
                         </div>
                     </div>
                 </div>
@@ -142,7 +144,7 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="pulse-outline"></ion-icon>
+                    <Icon name="pulse"/>
                     <h2>My Activity</h2>
                 </div>
                 <div className="profile-stat-grid">
@@ -175,12 +177,12 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="star-outline"></ion-icon>
+                    <Icon name="star"/>
                     <h2>Your UrbanFlow Reputation</h2>
                 </div>
                 <div className="profile-reputation">
                     <div className="profile-rep-main">
-                        <ion-icon name="star"></ion-icon>
+                        <Icon name="star"/>
                         <span className="profile-rep-value">4.8</span>
                         <span className="profile-rep-label">overall rating</span>
                     </div>
@@ -207,61 +209,61 @@ function Profile(){
 
             <div className="profile-section">
                 <div className="profile-section-head">
-                    <ion-icon name="settings-outline"></ion-icon>
+                    <Icon name="settings"/>
                     <h2>Account &amp; Preferences</h2>
                 </div>
                 <div className="profile-prefs">
                     <div className="profile-pref">
-                        <ion-icon name="notifications-outline"></ion-icon>
+                        <Icon name="bell"/>
                         <span>Notifications</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <Icon name="lock"/>
                         <span>Privacy</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="shield-outline"></ion-icon>
+                        <Icon name="shield"/>
                         <span>Security</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="wallet-outline"></ion-icon>
+                        <Icon name="wallet"/>
                         <span>Payment methods</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Saved locations</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <Icon name="bookmark"/>
                         <span>Saved resources</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="language-outline"></ion-icon>
+                        <Icon name="language"/>
                         <span>Language</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref">
-                        <ion-icon name="color-palette-outline"></ion-icon>
+                        <Icon name="palette"/>
                         <span>Appearance</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="profile-pref profile-pref-danger">
-                        <ion-icon name="log-out-outline"></ion-icon>
+                        <Icon name="logout"/>
                         <span>Logout</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>
 
             <div className="profile-section profile-danger-zone">
                 <div className="profile-section-head">
-                    <ion-icon name="warning-outline"></ion-icon>
+                    <Icon name="warning"/>
                     <h2>Danger Zone</h2>
                 </div>
                 <div className="profile-danger-actions">

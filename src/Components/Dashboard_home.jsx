@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function DashboardHome(){
     return(
         <div className="dhome-page">
@@ -11,22 +13,22 @@ function DashboardHome(){
 
             <div className="dhome-grid">
                 <div className="dhome-tile">
-                    <ion-icon name="pulse-outline"></ion-icon>
+                    <Icon name="pulse"/>
                     <span className="dhome-tile-value">3</span>
                     <span className="dhome-tile-label">Active operations</span>
                 </div>
                 <div className="dhome-tile">
-                    <ion-icon name="cube-outline"></ion-icon>
+                    <Icon name="cube"/>
                     <span className="dhome-tile-value">14</span>
                     <span className="dhome-tile-label">Resources available</span>
                 </div>
                 <div className="dhome-tile">
-                    <ion-icon name="swap-horizontal-outline"></ion-icon>
+                    <Icon name="swap"/>
                     <span className="dhome-tile-value">5</span>
                     <span className="dhome-tile-label">Pending requests</span>
                 </div>
                 <div className="dhome-tile">
-                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    <Icon name="shield"/>
                     <span className="dhome-tile-value">92</span>
                     <span className="dhome-tile-label">Trust score</span>
                 </div>
@@ -35,7 +37,7 @@ function DashboardHome(){
             <div className="dhome-sections">
                 <div className="dhome-section">
                     <div className="dhome-section-head">
-                        <ion-icon name="time-outline"></ion-icon>
+                        <Icon name="time"/>
                         <h2>Recent Activity</h2>
                     </div>
                     <div className="dhome-activity">
@@ -64,7 +66,7 @@ function DashboardHome(){
 
                 <div className="dhome-section">
                     <div className="dhome-section-head">
-                        <ion-icon name="radio-outline"></ion-icon>
+                        <Icon name="radio"/>
                         <h2>Live Network</h2>
                     </div>
                     <div className="dhome-live">

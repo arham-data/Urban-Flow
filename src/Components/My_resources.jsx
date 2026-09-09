@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function MyResources(){
     return(
         <div className="mr-page">
@@ -8,7 +10,7 @@ function MyResources(){
                     <p>Manage everything you've listed on the UrbanFlow network.</p>
                 </div>
                 <button className="mr-add-btn">
-                    <ion-icon name="add-outline"></ion-icon>
+                    <Icon name="add"/>
                     Add Resource
                 </button>
             </div>
@@ -37,7 +39,7 @@ function MyResources(){
                 <div className="mr-card">
                     <div className="mr-card-top">
                         <div className="mr-type-badge">
-                            <ion-icon name="car-sport-outline"></ion-icon>
+                            <Icon name="car"/>
                             <span>Truck</span>
                         </div>
                         <span className="mr-status-pill status-available">● Active</span>
@@ -74,7 +76,7 @@ function MyResources(){
                 <div className="mr-card">
                     <div className="mr-card-top">
                         <div className="mr-type-badge">
-                            <ion-icon name="business-outline"></ion-icon>
+                            <Icon name="business"/>
                             <span>Warehouse</span>
                         </div>
                         <span className="mr-status-pill status-available">● Available</span>
@@ -111,7 +113,7 @@ function MyResources(){
                 <div className="mr-card">
                     <div className="mr-card-top">
                         <div className="mr-type-badge">
-                            <ion-icon name="archive-outline"></ion-icon>
+                            <Icon name="archive"/>
                             <span>Storage</span>
                         </div>
                         <span className="mr-status-pill status-partial">● Partially</span>
@@ -148,7 +150,7 @@ function MyResources(){
                 <div className="mr-card">
                     <div className="mr-card-top">
                         <div className="mr-type-badge">
-                            <ion-icon name="cube-outline"></ion-icon>
+                            <Icon name="cube"/>
                             <span>Inventory</span>
                         </div>
                         <span className="mr-status-pill status-unavailable">● Unavailable</span>

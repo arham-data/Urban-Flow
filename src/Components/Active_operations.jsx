@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function ActiveOperation(){
     return(
         <div className="ao-page">
@@ -9,7 +11,7 @@ function ActiveOperation(){
 
             <div className="ao-layout">
                 <div className="ao-map">
-                    <ion-icon name="map-outline"></ion-icon>
+                    <Icon name="map"/>
                     <span className="ao-map-label">Live route map</span>
                 </div>
 
@@ -17,14 +19,14 @@ function ActiveOperation(){
                     <div className="ao-card">
                         <div className="ao-card-head">
                             <div className="ao-type">
-                                <ion-icon name="car-sport-outline"></ion-icon>
+                                <Icon name="car"/>
                                 <span>Truck · Tata 407</span>
                             </div>
                             <span className="ao-status in-transit">● In Transit</span>
                         </div>
                         <div className="ao-route">
                             <span>Okhla</span>
-                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                            <Icon name="arrow"/>
                             <span>Dwarka</span>
                         </div>
                         <div className="ao-progress">
@@ -46,14 +48,14 @@ function ActiveOperation(){
                     <div className="ao-card">
                         <div className="ao-card-head">
                             <div className="ao-type">
-                                <ion-icon name="archive-outline"></ion-icon>
+                                <Icon name="archive"/>
                                 <span>Storage · Loading</span>
                             </div>
                             <span className="ao-status in-progress">● In Progress</span>
                         </div>
                         <div className="ao-route">
                             <span>Sector 18</span>
-                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                            <Icon name="arrow"/>
                             <span>Udyog Vihar</span>
                         </div>
                         <div className="ao-progress">
@@ -76,14 +78,14 @@ function ActiveOperation(){
                     <div className="ao-card">
                         <div className="ao-card-head">
                             <div className="ao-type">
-                                <ion-icon name="cube-outline"></ion-icon>
+                                <Icon name="cube"/>
                                 <span>Inventory · Delivery</span>
                             </div>
                             <span className="ao-status in-transit">● In Transit</span>
                         </div>
                         <div className="ao-route">
                             <span>Mayapuri</span>
-                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                            <Icon name="arrow"/>
                             <span>Karol Bagh</span>
                         </div>
                         <div className="ao-progress">

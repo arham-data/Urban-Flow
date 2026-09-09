@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function Settings(){
     return(
         <div className="set-page">
@@ -9,51 +11,51 @@ function Settings(){
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="person-outline"></ion-icon>
+                    <Icon name="person"/>
                     <h2>Profile</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="create-outline"></ion-icon>
+                        <Icon name="create"/>
                         <span>Edit personal information</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="business-outline"></ion-icon>
+                        <Icon name="business"/>
                         <span>Business details &amp; verification</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="image-outline"></ion-icon>
+                        <Icon name="image"/>
                         <span>Profile photo</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="notifications-outline"></ion-icon>
+                    <Icon name="bell"/>
                     <h2>Notifications</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="swap-horizontal-outline"></ion-icon>
+                        <Icon name="swap"/>
                         <span>Request updates</span>
                         <span className="set-toggle on"></span>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="pulse-outline"></ion-icon>
+                        <Icon name="pulse"/>
                         <span>Operation alerts</span>
                         <span className="set-toggle on"></span>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <Icon name="mail"/>
                         <span>Email notifications</span>
                         <span className="set-toggle"></span>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="megaphone-outline"></ion-icon>
+                        <Icon name="megaphone"/>
                         <span>Marketing &amp; promotions</span>
                         <span className="set-toggle"></span>
                     </div>
@@ -62,96 +64,96 @@ function Settings(){
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    <Icon name="shield"/>
                     <h2>Privacy &amp; Security</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <Icon name="lock"/>
                         <span>Change password</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="finger-print-outline"></ion-icon>
+                        <Icon name="fingerprint"/>
                         <span>Two-factor authentication</span>
                         <span className="set-toggle on"></span>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="eye-off-outline"></ion-icon>
+                        <Icon name="eye-off"/>
                         <span>Privacy settings</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="shield-outline"></ion-icon>
+                        <Icon name="shield"/>
                         <span>Verified devices</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="wallet-outline"></ion-icon>
+                    <Icon name="wallet"/>
                     <h2>Payments</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="card-outline"></ion-icon>
+                        <Icon name="card"/>
                         <span>Payment methods</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <Icon name="cash"/>
                         <span>Payout preferences</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="receipt-outline"></ion-icon>
+                        <Icon name="receipt"/>
                         <span>Billing &amp; invoices</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="location-outline"></ion-icon>
+                    <Icon name="location"/>
                     <h2>Saved</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Saved locations</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <Icon name="bookmark"/>
                         <span>Saved resources</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>
 
             <div className="set-section">
                 <div className="set-section-head">
-                    <ion-icon name="options-outline"></ion-icon>
+                    <Icon name="options"/>
                     <h2>General</h2>
                 </div>
                 <div className="set-prefs">
                     <div className="set-pref">
-                        <ion-icon name="language-outline"></ion-icon>
+                        <Icon name="language"/>
                         <span>Language</span>
                         <span className="set-value">English</span>
                     </div>
                     <div className="set-pref">
-                        <ion-icon name="color-palette-outline"></ion-icon>
+                        <Icon name="palette"/>
                         <span>Appearance</span>
                         <span className="set-value">Light</span>
                     </div>
-                    <div className="set-pref">
-                        <ion-icon name="log-out-outline"></ion-icon>
+                    <div className="set-pref set-pref-danger">
+                        <Icon name="logout"/>
                         <span>Logout</span>
-                        <ion-icon name="chevron-forward-outline" className="pref-chevron"></ion-icon>
+                        <Icon name="chevron" className="pref-chevron"/>
                     </div>
                 </div>
             </div>

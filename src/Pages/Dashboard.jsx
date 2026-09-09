@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./Dashboard.css"
+import Icon from "../Components/Icon.jsx"
 import DashboardHome from "../Components/Dashboard_home.jsx"
 import "../Components/Dashboard_home.css"
 import FindResource from "../Components/Find_resources.jsx"
@@ -30,53 +31,65 @@ function Dashboard(){
         <>  
         <div className="Dashboard">
             <div className="db-menu">
+                <div className="db-brand">
+                    <span className="db-brand-mark"></span>
+                    <span className="db-brand-name">UrbanFlow</span>
+                    <span className="db-brand-tag">v0.2</span>
+                </div>
+
                 <div className="menu-1">
-                    <div className="m1-1">
-                        <ion-icon name="cube-outline"></ion-icon>
-                        <span>UrbanFlow</span>
-                    </div>
-                    <div onClick={() => setPage("Dashboard")} className="m1-2">
-                        <ion-icon name="grid-outline"></ion-icon>
+                    <span className="db-section-label">Workspace</span>
+                    <div onClick={() => setPage("Dashboard")} className={"db-nav-item" + (page === "home" || page === "Dashboard" ? " active" : "")}>
+                        <Icon name="grid"/>
                         <span>Dashboard</span>
                     </div>
-                    <div onClick={() => setPage("FindResource")} className="m1-3">
-                        <ion-icon name="search-outline"></ion-icon>
+                    <div onClick={() => setPage("FindResource")} className={"db-nav-item" + (page === "FindResource" ? " active" : "")}>
+                        <Icon name="search"/>
                         <span>Find resources</span>
                     </div>
-                    <div onClick={() => setPage("MyResources")} className="m1-4">
-                        <ion-icon name="folder-open-outline"></ion-icon>
+                    <div onClick={() => setPage("MyResources")} className={"db-nav-item" + (page === "MyResources" ? " active" : "")}>
+                        <Icon name="folder"/>
                         <span>My resources</span>
                     </div>
-                    <div onClick={() => setPage("Requests")} className="m1-5">
-                        <ion-icon name="swap-horizontal-outline"></ion-icon>
+                    <div onClick={() => setPage("Requests")} className={"db-nav-item" + (page === "Requests" ? " active" : "")}>
+                        <Icon name="swap"/>
                         <span>Requests</span>
                     </div>
-                    <div onClick={() => setPage("ActiveOperation")} className="m1-6">
-                        <ion-icon name="pulse-outline"></ion-icon>
-                        <span>Active Operation</span>
+                    <div onClick={() => setPage("ActiveOperation")} className={"db-nav-item" + (page === "ActiveOperation" ? " active" : "")}>
+                        <Icon name="pulse"/>
+                        <span>Active Operations</span>
                     </div>
-                    <div onClick={() => setPage("Messages")} className="m1-7">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    <div onClick={() => setPage("Messages")} className={"db-nav-item" + (page === "Messages" ? " active" : "")}>
+                        <Icon name="chat"/>
                         <span>Messages</span>
                     </div>
-                    <div onClick={() => setPage("Analytics")} className="m1-8">
-                        <ion-icon name="bar-chart-outline"></ion-icon>
+                    <div onClick={() => setPage("Analytics")} className={"db-nav-item" + (page === "Analytics" ? " active" : "")}>
+                        <Icon name="chart"/>
                         <span>Analytics</span>
                     </div>
                 </div>
                 <div className="menu-separator"></div>
                 <div className="menu-2">
-                    <div onClick={() => setPage("Profile")} className="m2-1">
-                        <ion-icon name="person-outline"></ion-icon>
+                    <span className="db-section-label">Account</span>
+                    <div onClick={() => setPage("Profile")} className={"db-nav-item" + (page === "Profile" ? " active" : "")}>
+                        <Icon name="person"/>
                         <span>Profile</span>
                     </div>
-                    <div onClick={() => setPage("Settings")} className="m2-2">
-                        <ion-icon name="settings-outline"></ion-icon>
+                    <div onClick={() => setPage("Settings")} className={"db-nav-item" + (page === "Settings" ? " active" : "")}>
+                        <Icon name="settings"/>
                         <span>Settings</span>
                     </div>
-                    <div onClick={() => setPage("HelpCenter")} className="m2-3">
-                        <ion-icon name="help-circle-outline"></ion-icon>
+                    <div onClick={() => setPage("HelpCenter")} className={"db-nav-item" + (page === "HelpCenter" ? " active" : "")}>
+                        <Icon name="help"/>
                         <span>Help Center</span>
+                    </div>
+                </div>
+
+                <div className="db-user">
+                    <span className="db-user-avatar">AJ</span>
+                    <div className="db-user-meta">
+                        <strong>Arham Jain</strong>
+                        <span>@arhamjain</span>
                     </div>
                 </div>
             </div>

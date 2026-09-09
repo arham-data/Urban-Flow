@@ -64,36 +64,51 @@ function SignUp(){
         <main className="login-page">
 
             <div className="login-l">
-                <div className="l-logo"><Link to="/">URBAN FLOW</Link></div>
-                
+                <div className="l-brand"><Link to="/">UrbanFlow</Link></div>
+
+                <div className="l-ticker">
+                    <span className="l-ticker-dot"></span>
+                    <span>Network live · Delhi NCR</span>
+                </div>
 
                 <div className="l-text">
-                    <p>Move the <br></br> city forward.</p>
+                    <p>Move the <em>city</em> forward.</p>
                     <span>A living network for the people, places, and resources that keep cities moving.</span>
+                </div>
+
+                <div className="l-footer">
+                    <span>1 · Join</span>
+                    <span className="l-dot">·</span>
+                    <span>2 · List</span>
+                    <span className="l-dot">·</span>
+                    <span>3 · Move</span>
                 </div>
             </div>
 
 
             <div className="login-r">
-                <div className="form-head">
-                    <p>Create your UrbanFlow account</p>
-                 </div>
-                <form onSubmit={HandleSubmit}>
-                    <p>Name</p>
-                    <input name="name" value={formData.name} onChange={HandleChange} placeholder="Name" required></input>
-                    <p>Username</p>
-                    <input name="username" value={formData.username} onChange={HandleChange} placeholder="Username" required></input>
-                    <p>Phone Number</p>
-                    <input name="number" value={formData.number} onChange={HandleChange} placeholder="Phone Number" type="number" required></input>
-                    <p>E-mail</p>
-                    <input name="email" value={formData.email} onChange={HandleChange} placeholder="E-mail" required></input>
-                    <p>Password</p>
-                    <input name="password" value={formData.password} onChange={HandleChange} placeholder="Password" required></input>
-                </form>
+                <div className="auth-card">
+                    <div className="auth-eyebrow">Join the network</div>
+                    <h1 className="auth-title">Create your account.</h1>
+                    <p className="auth-sub">List resources, find what you need, and move your city forward.</p>
 
-                <div className="form-bottom">
-                    <button onClick={HandleSubmit}>Submit</button>
-                    <p>Already have an account <Link to="/login"><span>Login</span></Link> </p>
+                    <form onSubmit={HandleSubmit}>
+                        <label>Full name</label>
+                        <input name="name" value={formData.name} onChange={HandleChange} placeholder="e.g. Arham Jain" required></input>
+                        <label>Username</label>
+                        <input name="username" value={formData.username} onChange={HandleChange} placeholder="e.g. arhamjain" required></input>
+                        <label>Phone number</label>
+                        <input name="number" value={formData.number} onChange={HandleChange} placeholder="+91 98765 43210" type="number" required></input>
+                        <label>Email</label>
+                        <input name="email" value={formData.email} onChange={HandleChange} placeholder="you@example.com" required></input>
+                        <label>Password</label>
+                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="Create a strong password" required></input>
+                    </form>
+
+                    <div className="form-bottom">
+                        <button onClick={HandleSubmit}>Create Account</button>
+                        <p>Already have an account? <Link to="/login"><span>Sign in</span></Link></p>
+                    </div>
                 </div>
             </div>
         </main>

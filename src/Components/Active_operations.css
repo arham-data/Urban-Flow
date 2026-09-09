@@ -1,179 +1,221 @@
-.ao-page{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    padding: 2% 2.5%;
-    font-family: "DM Sans", sans-serif;
-    background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
-        #f4f5f2;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+/* —— Active Operations —— */
+
+.ao-page {
+  padding-bottom: 8px;
 }
 
-.ao-title h1{
-    margin: 0;
-    font-size: 2rem;
-    color: #263d32;
-    font-weight: 700;
-}
-.ao-title p{
-    margin: 4px 0 0 0;
-    color: #66716a;
-    font-size: 0.95rem;
+.ao-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  align-items: start;
 }
 
-.ao-layout{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-.ao-map{
-    background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.15), transparent 60%),
-        #263d32;
-    border: 1px solid rgba(38,61,50,0.1);
-    border-radius: 18px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.ao-map ion-icon{
-    font-size: 4rem;
-    color: #496b5a;
-}
-.ao-map-label{
-    color: #aebdb3;
-    font-size: 0.85rem;
+/* Map placeholder */
+
+.ao-map {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 420px;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--surface);
+  background-size: 32px 32px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--faint);
 }
 
-.ao-list{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-.ao-card{
-    background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(38,61,50,0.1);
-    border-radius: 18px;
-    padding: 18px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-.ao-card-head{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.ao-type{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #263d32;
-    font-weight: 700;
-    font-size: 0.95rem;
-}
-.ao-type ion-icon{
-    color: #496b5a;
-    font-size: 1.2rem;
-}
-.ao-status{
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 999px;
-}
-.ao-status.in-transit{ color: #2c7fd6; background: rgba(77,159,255,0.15); }
-.ao-status.in-progress{ color: #b97a12; background: rgba(245,166,35,0.16); }
-
-.ao-route{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #66716a;
-    font-size: 0.85rem;
-}
-.ao-route ion-icon{
-    color: #496b5a;
-    font-size: 0.95rem;
+.ao-map svg {
+  color: var(--muted);
 }
 
-.ao-progress{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.ao-progress-track{
-    flex: 1;
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(38,61,50,0.08);
-    overflow: hidden;
-}
-.ao-progress-fill{
-    height: 100%;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #557561, #8da695);
-}
-.ao-progress-num{
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #66716a;
+.ao-map-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
 }
 
-.ao-meta{
-    display: flex;
-    justify-content: space-between;
-    color: #88938c;
-    font-size: 0.78rem;
+/* Operation cards */
+
+.ao-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.ao-actions{
-    display: flex;
-    gap: 8px;
-}
-.ao-btn{
-    flex: 1;
-    background: #263d32;
-    color: #ffffff;
-    border: none;
-    padding: 9px 12px;
-    border-radius: 10px;
-    font-family: "DM Sans", sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-.ao-btn:hover{
-    background: #496b5a;
-}
-.ao-btn-secondary{
-    background: rgba(255,255,255,0.6);
-    color: #263d32;
-    border: 1px solid rgba(38,61,50,0.1);
-}
-.ao-btn-secondary:hover{
-    background: rgba(73,107,90,0.1);
-}
-.ao-btn-input{
-    background: #3bce7c;
-}
-.ao-btn-input:hover{
-    background: #2baa65;
+.ao-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 26px;
 }
 
-@media (max-width: 900px){
-    .ao-layout{
-        grid-template-columns: 1fr;
-    }
+.ao-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ao-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.ao-type svg {
+  color: var(--muted);
+}
+
+.ao-status {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+.ao-status.in-transit {
+  background: var(--blue-bg);
+  color: var(--blue-ink);
+}
+
+.ao-status.in-progress {
+  background: var(--green-bg);
+  color: var(--green-ink);
+}
+
+/* Route */
+
+.ao-route {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ao-route svg {
+  color: var(--faint);
+}
+
+.ao-route span:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Progress */
+
+.ao-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ao-progress-track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ao-progress-fill {
+  height: 100%;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.ao-progress-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Meta */
+
+.ao-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Actions */
+
+.ao-actions {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 18px;
+}
+
+.ao-btn {
+  padding: 9px 18px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--surface);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.ao-btn:hover {
+  background: #2a2a2a;
+}
+
+.ao-btn-secondary {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.ao-btn-secondary:hover {
+  background: var(--surface-2);
+}
+
+.ao-btn-input {
+  background: var(--green-bg);
+  border-color: var(--green-bg);
+  color: var(--green-ink);
+}
+
+.ao-btn-input:hover {
+  background: #dfe9dd;
+}
+
+/* Responsive */
+
+@media (max-width: 1080px) {
+  .ao-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ao-map {
+    position: static;
+    min-height: 200px;
+  }
 }

@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function FindResource(){
     return(
         <div className="fr-page">
@@ -7,7 +9,7 @@ function FindResource(){
                 <div className="fr-card">
                     <div className="fr-card-top">
                         <div className="fr-type-badge">
-                            <ion-icon name="car-sport-outline"></ion-icon>
+                            <Icon name="car"/>
                             <span>Truck</span>
                         </div>
                         <span className="fr-status-pill status-available">● Available</span>
@@ -17,7 +19,7 @@ function FindResource(){
                         <span className="fr-updated">Updated 8 min ago</span>
                     </div>
                     <div className="fr-location">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Okhla · 4.2 km away</span>
                     </div>
                     <div className="fr-stats">
@@ -46,10 +48,10 @@ function FindResource(){
                     <div className="fr-card-footer">
                         <div className="fr-provider">
                             <span>Verified Owner</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"></Icon>
                         </div>
                         <div className="fr-rating">
-                            <ion-icon name="star"></ion-icon>
+                            <Icon name="star"/>
                             <span>4.8</span>
                             <span className="fr-reviews">(212)</span>
                         </div>
@@ -64,7 +66,7 @@ function FindResource(){
                 <div className="fr-card">
                     <div className="fr-card-top">
                         <div className="fr-type-badge">
-                            <ion-icon name="business-outline"></ion-icon>
+                            <Icon name="business"/>
                             <span>Warehouse</span>
                         </div>
                         <span className="fr-status-pill status-available">● Available Now</span>
@@ -74,7 +76,7 @@ function FindResource(){
                         <span className="fr-updated">Updated 32 min ago</span>
                     </div>
                     <div className="fr-location">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Sector 18, Noida · 8.1 km away</span>
                     </div>
                     <div className="fr-stats">
@@ -103,10 +105,10 @@ function FindResource(){
                     <div className="fr-card-footer">
                         <div className="fr-provider">
                             <span>Verified Provider</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"></Icon>
                         </div>
                         <div className="fr-rating">
-                            <ion-icon name="star"></ion-icon>
+                            <Icon name="star"/>
                             <span>4.7</span>
                             <span className="fr-reviews">(98)</span>
                         </div>
@@ -121,7 +123,7 @@ function FindResource(){
                 <div className="fr-card">
                     <div className="fr-card-top">
                         <div className="fr-type-badge">
-                            <ion-icon name="archive-outline"></ion-icon>
+                            <Icon name="archive"/>
                             <span>Storage</span>
                         </div>
                         <span className="fr-status-pill status-partial">● Partially Available</span>
@@ -131,7 +133,7 @@ function FindResource(){
                         <span className="fr-updated">Updated 1 hr ago</span>
                     </div>
                     <div className="fr-location">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Udyog Vihar, Gurugram · 12.4 km away</span>
                     </div>
                     <div className="fr-stats">
@@ -163,7 +165,7 @@ function FindResource(){
                             <span className="fr-unverified">Unverified</span>
                         </div>
                         <div className="fr-rating">
-                            <ion-icon name="star"></ion-icon>
+                            <Icon name="star"/>
                             <span>4.2</span>
                             <span className="fr-reviews">(54)</span>
                         </div>
@@ -178,7 +180,7 @@ function FindResource(){
                 <div className="fr-card">
                     <div className="fr-card-top">
                         <div className="fr-type-badge">
-                            <ion-icon name="cube-outline"></ion-icon>
+                            <Icon name="cube"/>
                             <span>Inventory</span>
                         </div>
                         <span className="fr-status-pill status-available">● Available Immediately</span>
@@ -188,7 +190,7 @@ function FindResource(){
                         <span className="fr-updated">Updated 20 min ago</span>
                     </div>
                     <div className="fr-location">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Mayapuri · 6.8 km away</span>
                     </div>
                     <div className="fr-stats">
@@ -217,10 +219,10 @@ function FindResource(){
                     <div className="fr-card-footer">
                         <div className="fr-provider">
                             <span>Verified Supplier</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"></Icon>
                         </div>
                         <div className="fr-rating">
-                            <ion-icon name="star"></ion-icon>
+                            <Icon name="star"/>
                             <span>4.9</span>
                             <span className="fr-reviews">(340)</span>
                         </div>
@@ -235,7 +237,7 @@ function FindResource(){
                 <div className="fr-card">
                     <div className="fr-card-top">
                         <div className="fr-type-badge">
-                            <ion-icon name="aperture-outline"></ion-icon>
+                            <Icon name="aperture"/>
                             <span>Empty Space</span>
                         </div>
                         <span className="fr-status-pill status-reserved">● Reserved</span>
@@ -245,7 +247,7 @@ function FindResource(){
                         <span className="fr-updated">Updated 2 hrs ago</span>
                     </div>
                     <div className="fr-location">
-                        <ion-icon name="location-outline"></ion-icon>
+                        <Icon name="location"/>
                         <span>Dwarka · 15.2 km away</span>
                     </div>
                     <div className="fr-stats">
@@ -274,10 +276,10 @@ function FindResource(){
                     <div className="fr-card-footer">
                         <div className="fr-provider">
                             <span>Provider</span>
-                            <ion-icon name="checkmark-circle" className="verified"></ion-icon>
+                            <Icon name="check" className="verified"></Icon>
                         </div>
                         <div className="fr-rating">
-                            <ion-icon name="star"></ion-icon>
+                            <Icon name="star"/>
                             <span>4.5</span>
                             <span className="fr-reviews">(41)</span>
                         </div>

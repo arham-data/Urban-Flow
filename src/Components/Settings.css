@@ -1,115 +1,122 @@
-.set-page{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    padding: 2% 2.5%;
-    font-family: "DM Sans", sans-serif;
-    background:
-        radial-gradient(1200px 500px at 0% 0%, rgba(73,107,90,0.08), transparent 60%),
-        #f4f5f2;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+/* —— Settings —— */
+
+.set-page {
+  padding-bottom: 8px;
 }
 
-.set-title h1{
-    margin: 0;
-    font-size: 2rem;
-    color: #263d32;
-    font-weight: 700;
-}
-.set-title p{
-    margin: 4px 0 0 0;
-    color: #66716a;
-    font-size: 0.95rem;
+.set-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 
-.set-section{
-    background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(38,61,50,0.1);
-    border-radius: 18px;
-    padding: 20px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(38,61,50,0.08);
-}
-.set-section-head{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-}
-.set-section-head ion-icon{
-    color: #496b5a;
-    font-size: 1.2rem;
-}
-.set-section-head h2{
-    margin: 0;
-    font-size: 1.1rem;
-    color: #263d32;
-    font-weight: 700;
+.set-section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 26px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
 }
 
-.set-prefs{
-    display: flex;
-    flex-direction: column;
-}
-.set-pref{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 13px 10px;
-    border-radius: 10px;
-    color: #263d32;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-.set-pref:hover{
-    background: rgba(73,107,90,0.1);
-}
-.set-pref ion-icon{
-    color: #496b5a;
-    font-size: 1.2rem;
-}
-.set-pref .pref-chevron{
-    margin-left: auto;
-    color: #9aa49e;
-    font-size: 0.9rem;
+.set-section-head svg {
+  color: var(--muted);
 }
 
-.set-toggle{
-    margin-left: auto;
-    width: 40px;
-    height: 22px;
-    border-radius: 999px;
-    background: rgba(38,61,50,0.15);
-    position: relative;
-}
-.set-toggle::after{
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #ffffff;
-    transition: left 0.2s, background 0.2s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-.set-toggle.on{
-    background: #3bce7c;
-}
-.set-toggle.on::after{
-    left: 20px;
+.set-section-head h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.set-value{
-    margin-left: auto;
-    color: #88938c;
-    font-size: 0.85rem;
-    font-weight: 500;
+.set-prefs {
+  display: flex;
+  flex-direction: column;
+}
+
+.set-pref {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 26px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.set-pref:not(:last-child) {
+  border-bottom: 1px solid var(--line);
+}
+
+.set-pref:hover {
+  background: var(--surface-2);
+}
+
+.set-pref > svg:first-child {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.set-pref > span {
+  flex: 1;
+}
+
+.pref-chevron {
+  color: var(--faint);
+  flex-shrink: 0;
+}
+
+/* Toggle */
+
+.set-toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  background: #d6d5d1;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.set-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: var(--surface);
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.set-toggle.on {
+  background: var(--ink);
+}
+
+.set-toggle.on::after {
+  transform: translateX(18px);
+}
+
+/* Value label */
+
+.set-value {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Logout */
+
+.set-pref-danger {
+  color: var(--red-ink);
+}
+
+.set-pref-danger > svg:first-child {
+  color: var(--red-ink);
 }

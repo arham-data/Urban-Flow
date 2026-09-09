@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function Analytics(){
     return(
         <div className="an-page">
@@ -32,7 +34,7 @@ function Analytics(){
 
             <div className="an-chart-section">
                 <div className="an-section-head">
-                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <Icon name="trending"/>
                     <h2>Revenue Trend</h2>
                 </div>
                 <div className="an-bars">
@@ -78,7 +80,7 @@ function Analytics(){
             <div className="an-insights">
                 <div className="an-section">
                     <div className="an-section-head">
-                        <ion-icon name="cubes-outline"></ion-icon>
+                        <Icon name="cubes"/>
                         <h2>By Resource Type</h2>
                     </div>
                     <div className="an-list">
@@ -115,7 +117,7 @@ function Analytics(){
 
                 <div className="an-section">
                     <div className="an-section-head">
-                        <ion-icon name="time-outline"></ion-icon>
+                        <Icon name="time"/>
                         <h2>Peak Bookings</h2>
                     </div>
                     <div className="an-list">

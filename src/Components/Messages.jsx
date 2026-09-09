@@ -1,3 +1,5 @@
+import Icon from "./Icon.jsx"
+
 function Messages(){
     return(
         <div className="msg-page">
@@ -73,7 +75,7 @@ function Messages(){
                     <div className="msg-input">
                         <input placeholder="Type a message..."></input>
                         <button>
-                            <ion-icon name="send-outline"></ion-icon>
+                            <Icon name="send"/>
                         </button>
                     </div>
                 </div>
