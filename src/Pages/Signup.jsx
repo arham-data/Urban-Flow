@@ -13,8 +13,15 @@ function SignUp(){
         password:""
     })
 
+    const [error, setError] = useState("")
+
     async function HandleSubmit(event){
         event.preventDefault()
+
+        if (formData.number.length !== 10) {
+            setError("Phone number must be exactly 10 digits")
+            return
+        }
 
         const response = await fetch(
             "https://backend-production-4068.up.railway.app/api/signup",
@@ -30,9 +37,10 @@ function SignUp(){
         const result = await response.json()
 
         if (response.ok){
-            console.log("signup api is working")
+            localStorage.setItem("user", JSON.stringify(result.user))
+            navigate("/dashboard")
         }else{
-            console.log(result.message)
+            setError(result.message)
         }
 
         setFormData({
@@ -42,15 +50,20 @@ function SignUp(){
             email:"",
             password:""
         })
-
-        console.log("atleast the button is working")
-
-        navigate("/dashboard")
     }
 
 
     function HandleChange(event){
         const {name,value} = event.target
+
+        if (name === "number") {
+            const digitsOnly = value.replace(/\D/g, "").slice(0, 10)
+            setFormData(prev => ({
+                ...prev,
+                [name]: digitsOnly
+            }))
+            return
+        }
 
         setFormData(prev => ({
             ...prev,
@@ -98,11 +111,14 @@ function SignUp(){
                         <label>Username</label>
                         <input name="username" value={formData.username} onChange={HandleChange} placeholder="e.g. arhamjain" required></input>
                         <label>Phone number</label>
-                        <input name="number" value={formData.number} onChange={HandleChange} placeholder="+91 98765 43210" type="number" required></input>
+                        <div className="phone-input-wrap">
+                            <span className="phone-prefix">+91</span>
+                            <input name="number" value={formData.number} onChange={HandleChange} placeholder="98765 43210" type="tel" required></input>
+                        </div>
                         <label>Email</label>
                         <input name="email" value={formData.email} onChange={HandleChange} placeholder="you@example.com" required></input>
                         <label>Password</label>
-                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="Create a strong password" required></input>
+                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="Create a strong password" type="password" required></input>
                     </form>
 
                     <div className="form-bottom">
@@ -112,6 +128,23 @@ function SignUp(){
                 </div>
             </div>
         </main>
+
+        {error && (
+            <div className="error-popup-overlay" onClick={() => setError("")}>
+                <div className="error-popup" onClick={(e) => e.stopPropagation()}>
+                    <div className="error-popup-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Signup Failed</h3>
+                    <p>{error}</p>
+                    <button onClick={() => setError("")}>Close</button>
+                </div>
+            </div>
+        )}
         </>
     )
 }

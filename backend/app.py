@@ -33,6 +33,19 @@ def signup():
         email = signup_data["email"]
         password = signup_data["password"]
 
+        if len(number) != 10 or not number.isdigit():
+            return jsonify({
+                "message": "Phone number must be exactly 10 digits"
+            }), 400
+
+        cursor.execute("SELECT * FROM USERS WHERE USERNAME = %s OR E_MAIL = %s OR PHONE_NUMBER = %s", (username, email, number))
+        existing_user = cursor.fetchone()
+
+        if existing_user:
+            return jsonify({
+                "message": "User already signed up. Please login instead."
+            }), 409
+
         cursor.execute(
             """
             INSERT INTO USERS
@@ -44,8 +57,18 @@ def signup():
 
         db.commit()
 
+        cursor.execute("SELECT * FROM USERS WHERE USERNAME = %s", (username,))
+        new_user = cursor.fetchone()
+
         return jsonify({
-            "message": "signup api working"
+            "message": "Signup successful",
+            "user": {
+                "id": new_user[0],
+                "name": new_user[1],
+                "username": new_user[2],
+                "phone": new_user[3],
+                "email": new_user[4]
+            }
         }), 201
 
     except Exception as e:
@@ -62,13 +85,24 @@ def login():
         username = login_data["username"]
         password = login_data["password"]
 
-        cursor.execute("SELECT * FROM USER")
+        cursor.execute("SELECT * FROM USERS WHERE USERNAME = %s AND PASSWORD = %s", (username, password))
+        user = cursor.fetchone()
 
-        result = cursor.fetchall()   
+        if not user:
+            return jsonify({
+                "message": "Invalid username or password"
+            }), 401
 
         return jsonify({
-            "message": "login api is working"
-        }),201
+            "message": "Login successful",
+            "user": {
+                "id": user[0],
+                "name": user[1],
+                "username": user[2],
+                "phone": user[3],
+                "email": user[4]
+            }
+        }), 200
 
     except Exception as e:
         return jsonify({

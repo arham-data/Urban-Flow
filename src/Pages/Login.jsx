@@ -10,6 +10,8 @@ function Login(){
         password:""
     })
 
+    const [error, setError] = useState("")
+
     function HandleChange(event){
         const {name,value} = event.target
 
@@ -36,17 +38,16 @@ function Login(){
         const result = await response.json()
 
         if (response.ok){
-            console.log("login api is working")
+            localStorage.setItem("user", JSON.stringify(result.user))
+            navigate("/dashboard")
         } else {
-            console.log(result.message)
+            setError(result.message)
         }
 
         setFormData({
             username:"",
             password:""
         })
-
-        navigate("/dashboard")
     }
 
 
@@ -85,7 +86,7 @@ function Login(){
                         <label>Username</label>
                         <input name="username" value={formData.username} onChange={HandleChange} placeholder="e.g. arhamjain" required></input>
                         <label>Password</label>
-                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="••••••••••" required></input>
+                        <input name="password" value={formData.password} onChange={HandleChange} placeholder="••••••••••" type="password" required></input>
                     </form>
 
                     <div className="form-bottom">
@@ -94,6 +95,23 @@ function Login(){
                     </div>
                 </div>
             </div>
+
+            {error && (
+                <div className="error-popup-overlay" onClick={() => setError("")}>
+                    <div className="error-popup" onClick={(e) => e.stopPropagation()}>
+                        <div className="error-popup-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                <line x1="9" y1="9" x2="15" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3>Login Failed</h3>
+                        <p>{error}</p>
+                        <button onClick={() => setError("")}>Close</button>
+                    </div>
+                </div>
+            )}
         </main>
     )
 }
