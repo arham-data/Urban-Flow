@@ -115,7 +115,7 @@ function Dashboard(){
 
             <div className="db-content">
                 <div className="content-main">
-                    {(page === "home" || page === "Dashboard") && <DashboardHome/>}
+                    {(page === "home" || page === "Dashboard") && <DashboardHome onFindResources={() => setPage("FindResource")}/>}
                     {page === "FindResource" && <FindResource/>}
                     {page === "MyResources" && <MyResources/>}
                     {page === "Requests" && <Requests/>}
