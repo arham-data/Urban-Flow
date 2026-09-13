@@ -256,7 +256,171 @@
   background: var(--red-bg);
 }
 
-/* Responsive */
+/* —— Side drawer —— */
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  backdrop-filter: blur(3px);
+  animation: drawer-fade 0.2s ease;
+}
+
+@keyframes drawer-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer-panel {
+  width: 440px;
+  max-width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  padding: 32px 32px 40px;
+  overflow-y: auto;
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.12);
+  animation: drawer-slide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes drawer-slide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.drawer-head h2 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.drawer-close:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.drawer-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.drawer-form label:not(:first-child) {
+  margin-top: 18px;
+}
+
+.drawer-form input,
+.drawer-form select,
+.drawer-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  resize: vertical;
+}
+
+.drawer-form input:focus,
+.drawer-form select:focus,
+.drawer-form textarea:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.drawer-form input::placeholder,
+.drawer-form textarea::placeholder {
+  color: var(--faint);
+}
+
+.drawer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.drawer-row .drawer-field label:first-child {
+  margin-top: 18px;
+}
+
+.drawer-row .drawer-field label {
+  margin-top: 0;
+}
+
+.drawer-error {
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--red-bg);
+  border: 1px solid var(--red-ink);
+  border-radius: 8px;
+  color: var(--red-ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.drawer-submit {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px 20px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--surface);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.drawer-submit:hover {
+  background: #2a2a2a;
+}
+
+@media (max-width: 560px) {
+  .drawer-panel {
+    width: 100%;
+    padding: 24px 20px 32px;
+  }
+
+  .drawer-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* —— Responsive —— */
 
 @media (max-width: 1080px) {
   .mr-grid {

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import "./Dashboard.css"
 import Icon from "../Components/Icon.jsx"
 import DashboardHome from "../Components/Dashboard_home.jsx"
@@ -24,7 +25,24 @@ import "../Components/Requests.css"
 
 function Dashboard(){
 
+    const navigate = useNavigate()
+
+    const user = JSON.parse(localStorage.getItem("user") || "{}")
+    const userName = user.name || "User"
+    const userUsername = user.username || "username"
+
     const [page,setPage] = useState("home")
+
+    function handleLogout(){
+        localStorage.removeItem("user")
+        navigate("/login")
+    }
+
+    const initials = userName.replace(/[^a-zA-Z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("") || "U"
+
+    useEffect(() => {
+        if (!localStorage.getItem("user")) navigate("/login")
+    }, [navigate])
 
 
     return(
@@ -85,11 +103,11 @@ function Dashboard(){
                     </div>
                 </div>
 
-                <div className="db-user">
-                    <span className="db-user-avatar">AJ</span>
+                <div className="db-user" onClick={handleLogout} title="Logout">
+                    <span className="db-user-avatar">{initials}</span>
                     <div className="db-user-meta">
-                        <strong>Arham Jain</strong>
-                        <span>@arhamjain</span>
+                        <strong>{userName}</strong>
+                        <span>@{userUsername}</span>
                     </div>
                 </div>
             </div>

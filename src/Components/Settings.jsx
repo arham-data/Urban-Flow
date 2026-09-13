@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom"
 import Icon from "./Icon.jsx"
 
 function Settings(){
+
+    const navigate = useNavigate()
+
+    function handleLogout(){
+        localStorage.removeItem("user")
+        navigate("/login")
+    }
+
     return(
         <div className="set-page">
 
@@ -150,7 +159,7 @@ function Settings(){
                         <span>Appearance</span>
                         <span className="set-value">Light</span>
                     </div>
-                    <div className="set-pref set-pref-danger">
+                    <div className="set-pref set-pref-danger" onClick={handleLogout} style={{cursor:"pointer"}}>
                         <Icon name="logout"/>
                         <span>Logout</span>
                         <Icon name="chevron" className="pref-chevron"/>
