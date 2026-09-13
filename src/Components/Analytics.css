@@ -225,3 +225,39 @@
     grid-template-columns: 90px 1fr 44px;
   }
 }
+
+/* Phase 2 locked sections */
+
+.an-phase2 {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.an-phase2-content {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.an-phase2-veil {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 14px;
+  z-index: 2;
+  color: var(--muted);
+}
+
+.an-phase2-veil strong {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}

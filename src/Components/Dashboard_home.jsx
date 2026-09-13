@@ -17,6 +17,10 @@ function timeAgo(dateStr){
 function DashboardHome({ onFindResources }){
 
     const [resources, setResources] = useState([])
+    const [requests, setRequests] = useState([])
+
+    const user = JSON.parse(localStorage.getItem("user") || "{}")
+    const userId = user.id
 
     useEffect(() => {
         fetch(`${API}/api/resources`)
@@ -25,11 +29,24 @@ function DashboardHome({ onFindResources }){
             .catch(() => {})
     }, [])
 
+    useEffect(() => {
+        if (!userId) return
+        fetch(`${API}/api/requests/user/${userId}`)
+            .then(res => res.json())
+            .then(data => {
+                const all = [...(data.incoming || []), ...(data.outgoing || [])]
+                setRequests(all)
+            })
+            .catch(() => {})
+    }, [userId])
+
     const available = resources.filter(r => r.status === "available").length
     const partial = resources.filter(r => r.status === "partial").length
     const reserved = resources.filter(r => r.status === "reserved").length
     const unavailable = resources.filter(r => r.status === "unavailable").length
     const recent = resources.slice(0, 4)
+    const pendingRequests = requests.filter(r => r.status === "pending").length
+    const activeOps = requests.filter(r => r.status === "accepted").length
 
     return(
         <div className="dhome-page">
@@ -44,7 +61,7 @@ function DashboardHome({ onFindResources }){
             <div className="dhome-grid">
                 <div className="dhome-tile">
                     <Icon name="pulse"/>
-                    <span className="dhome-tile-value">0</span>
+                    <span className="dhome-tile-value">{activeOps}</span>
                     <span className="dhome-tile-label">Active operations</span>
                 </div>
                 <div className="dhome-tile">
@@ -54,7 +71,7 @@ function DashboardHome({ onFindResources }){
                 </div>
                 <div className="dhome-tile">
                     <Icon name="swap"/>
-                    <span className="dhome-tile-value">0</span>
+                    <span className="dhome-tile-value">{pendingRequests}</span>
                     <span className="dhome-tile-label">Pending requests</span>
                 </div>
             </div>

@@ -25,22 +25,26 @@ const statusLabels = {
     "reserved": "Reserved"
 }
 
+const emptyForm = {
+    type: "Truck",
+    title: "",
+    location: "",
+    description: "",
+    price: "",
+    price_unit: "/day",
+    status: "available"
+}
+
 function MyResources(){
     const [resources, setResources] = useState([])
     const [loading, setLoading] = useState(true)
-    const [drawerOpen, setDrawerOpen] = useState(false)
+    const [drawerMode, setDrawerMode] = useState(null)
+    const [editId, setEditId] = useState(null)
+    const [viewing, setViewing] = useState(null)
     const [error, setError] = useState("")
     const [reload, setReload] = useState(0)
 
-    const [form, setForm] = useState({
-        type: "Truck",
-        title: "",
-        location: "",
-        description: "",
-        price: "",
-        price_unit: "/day",
-        status: "available"
-    })
+    const [form, setForm] = useState(emptyForm)
 
     const user = JSON.parse(localStorage.getItem("user") || "{}")
     const userId = user.id
@@ -66,18 +70,30 @@ function MyResources(){
         setForm(prev => ({...prev, [name]: value}))
     }
 
-    function openDrawer(){
-        setForm({
-            type: "Truck",
-            title: "",
-            location: "",
-            description: "",
-            price: "",
-            price_unit: "/day",
-            status: "available"
-        })
+    function openAdd(){
+        setForm({...emptyForm})
+        setEditId(null)
         setError("")
-        setDrawerOpen(true)
+        setDrawerMode("add")
+    }
+
+    function openEdit(r){
+        setForm({
+            type: r.type,
+            title: r.title,
+            location: r.location || "",
+            description: r.description || "",
+            price: r.price || "",
+            price_unit: r.price_unit || "/day",
+            status: r.status
+        })
+        setEditId(r.resource_id)
+        setError("")
+        setDrawerMode("edit")
+    }
+
+    function openView(r){
+        setViewing(r)
     }
 
     async function handleSubmit(e){
@@ -94,8 +110,8 @@ function MyResources(){
             price: form.price ? parseFloat(form.price) : null
         }
 
-        const res = await fetch(`${API}/api/resources`, {
-            method: "POST",
+        const res = await fetch(`${API}/api/resources${editId ? `/${editId}` : ""}`, {
+            method: editId ? "PUT" : "POST",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(body)
         })
@@ -103,10 +119,10 @@ function MyResources(){
         const result = await res.json()
 
         if (res.ok){
-            setDrawerOpen(false)
+            setDrawerMode(null)
             refreshResources()
         } else {
-            setError(result.message)
+            setError(result.message || "Something went wrong")
         }
     }
 
@@ -134,7 +150,7 @@ function MyResources(){
                     <h1>My Resources</h1>
                     <p>Manage everything you've listed on the UrbanFlow network.</p>
                 </div>
-                <button className="mr-add-btn" onClick={openDrawer}>
+                <button className="mr-add-btn" onClick={openAdd}>
                     <Icon name="add"/>
                     Add Resource
                 </button>
@@ -166,7 +182,7 @@ function MyResources(){
                     <Icon name="folder" size={40}/>
                     <p style={{fontSize:"18px",fontWeight:600,color:"var(--ink)",margin:"16px 0 6px"}}>No resources yet</p>
                     <p style={{fontSize:"14px",color:"var(--muted)",marginBottom:"24px"}}>Add your first resource to get started.</p>
-                    <button className="mr-add-btn" onClick={openDrawer}>
+                    <button className="mr-add-btn" onClick={openAdd}>
                         <Icon name="add"/>
                         Add Resource
                     </button>
@@ -207,8 +223,8 @@ function MyResources(){
                                 </div>
                             </div>
                             <div className="mr-card-actions">
-                                <button className="mr-btn" disabled title="Coming soon">Edit</button>
-                                <button className="mr-btn mr-btn-secondary" disabled title="Coming soon">View</button>
+                                <button className="mr-btn" onClick={() => openEdit(r)}>Edit</button>
+                                <button className="mr-btn mr-btn-secondary" onClick={() => openView(r)}>View</button>
                                 <button className="mr-btn mr-btn-danger" onClick={() => handleDelete(r.resource_id)}>Delete</button>
                             </div>
                         </div>
@@ -216,12 +232,12 @@ function MyResources(){
                 </div>
             )}
 
-            {drawerOpen && (
-                <div className="drawer-overlay" onClick={() => setDrawerOpen(false)}>
+            {drawerMode && (
+                <div className="drawer-overlay" onClick={() => setDrawerMode(null)}>
                     <div className="drawer-panel" onClick={(e) => e.stopPropagation()}>
                         <div className="drawer-head">
-                            <h2>Add Resource</h2>
-                            <button className="drawer-close" onClick={() => setDrawerOpen(false)}>
+                            <h2>{drawerMode === "edit" ? "Edit Resource" : "Add Resource"}</h2>
+                            <button className="drawer-close" onClick={() => setDrawerMode(null)}>
                                 <Icon name="circle" size={18}/>
                             </button>
                         </div>
@@ -276,8 +292,59 @@ function MyResources(){
                                 </div>
                             )}
 
-                            <button type="submit" className="drawer-submit">Add Resource</button>
+                            <button type="submit" className="drawer-submit">{drawerMode === "edit" ? "Save Changes" : "Add Resource"}</button>
                         </form>
+                    </div>
+                </div>
+            )}
+
+            {viewing && (
+                <div className="drawer-overlay" onClick={() => setViewing(null)}>
+                    <div className="drawer-panel" onClick={(e) => e.stopPropagation()}>
+                        <div className="drawer-head">
+                            <h2>Resource Details</h2>
+                            <button className="drawer-close" onClick={() => setViewing(null)}>
+                                <Icon name="circle" size={18}/>
+                            </button>
+                        </div>
+
+                        <div className="mr-view">
+                            <div className="mr-view-type">
+                                <Icon name={typeIcons[viewing.type] || "circle"}/>
+                                <span>{viewing.type}</span>
+                            </div>
+
+                            <span className={`mr-status-pill ${statusClasses[viewing.status] || "status-available"}`}>
+                                ● {statusLabels[viewing.status] || viewing.status}
+                            </span>
+
+                            <h2>{viewing.title}</h2>
+
+                            {viewing.location && (
+                                <p className="mr-view-row">
+                                    <Icon name="location"/>
+                                    <span>{viewing.location}</span>
+                                </p>
+                            )}
+
+                            <div className="mr-view-grid">
+                                <div className="mr-view-cell">
+                                    <span>Price</span>
+                                    <strong>{viewing.price ? `₹${Number(viewing.price).toLocaleString("en-IN")}` : "—"}</strong>
+                                </div>
+                                <div className="mr-view-cell">
+                                    <span>Unit</span>
+                                    <strong>{viewing.price_unit || "—"}</strong>
+                                </div>
+                            </div>
+
+                            {viewing.description && (
+                                <div className="mr-view-desc">
+                                    <span>Description</span>
+                                    <p>{viewing.description}</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}

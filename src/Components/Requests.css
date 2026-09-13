@@ -142,6 +142,49 @@
   background: var(--red-bg);
 }
 
+.req-message {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.req-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Empty state */
+
+.req-empty {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+.req-empty svg {
+  color: var(--faint);
+}
+
+.req-empty-title {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.req-empty-sub {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 /* Status pill */
 
 .req-status-pill {

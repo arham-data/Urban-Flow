@@ -1,9 +1,31 @@
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Icon from "./Icon.jsx"
+
+const defaultSettings = {
+    requestUpdates: true,
+    operationAlerts: true,
+    emailNotifications: false,
+    marketing: false,
+    twoFactor: true
+}
 
 function Settings(){
 
     const navigate = useNavigate()
+
+    const [settings, setSettings] = useState(() => ({
+        ...defaultSettings,
+        ...JSON.parse(localStorage.getItem("settings") || "{}")
+    }))
+
+    function toggleSetting(key){
+        setSettings(prev => {
+            const next = {...prev, [key]: !prev[key]}
+            localStorage.setItem("settings", JSON.stringify(next))
+            return next
+        })
+    }
 
     function handleLogout(){
         localStorage.removeItem("user")
@@ -48,25 +70,25 @@ function Settings(){
                     <h2>Notifications</h2>
                 </div>
                 <div className="set-prefs">
-                    <div className="set-pref">
+                    <div className="set-pref" onClick={() => toggleSetting("requestUpdates")} style={{cursor:"pointer"}}>
                         <Icon name="swap"/>
                         <span>Request updates</span>
-                        <span className="set-toggle on"></span>
+                        <span className={"set-toggle" + (settings.requestUpdates ? " on" : "")}></span>
                     </div>
-                    <div className="set-pref">
+                    <div className="set-pref" onClick={() => toggleSetting("operationAlerts")} style={{cursor:"pointer"}}>
                         <Icon name="pulse"/>
                         <span>Operation alerts</span>
-                        <span className="set-toggle on"></span>
+                        <span className={"set-toggle" + (settings.operationAlerts ? " on" : "")}></span>
                     </div>
-                    <div className="set-pref">
+                    <div className="set-pref" onClick={() => toggleSetting("emailNotifications")} style={{cursor:"pointer"}}>
                         <Icon name="mail"/>
                         <span>Email notifications</span>
-                        <span className="set-toggle"></span>
+                        <span className={"set-toggle" + (settings.emailNotifications ? " on" : "")}></span>
                     </div>
-                    <div className="set-pref">
+                    <div className="set-pref" onClick={() => toggleSetting("marketing")} style={{cursor:"pointer"}}>
                         <Icon name="megaphone"/>
                         <span>Marketing &amp; promotions</span>
-                        <span className="set-toggle"></span>
+                        <span className={"set-toggle" + (settings.marketing ? " on" : "")}></span>
                     </div>
                 </div>
             </div>
@@ -82,10 +104,10 @@ function Settings(){
                         <span>Change password</span>
                         <Icon name="chevron" className="pref-chevron"/>
                     </div>
-                    <div className="set-pref">
+                    <div className="set-pref" onClick={() => toggleSetting("twoFactor")} style={{cursor:"pointer"}}>
                         <Icon name="fingerprint"/>
                         <span>Two-factor authentication</span>
-                        <span className="set-toggle on"></span>
+                        <span className={"set-toggle" + (settings.twoFactor ? " on" : "")}></span>
                     </div>
                     <div className="set-pref">
                         <Icon name="eye-off"/>
