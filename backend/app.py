@@ -16,6 +16,10 @@ db = mysql.connector.connect(
 )
 
 def get_cursor():
+    try:
+        db.ping(reconnect=True, attempts=3, delay=1)
+    except Exception:
+        pass
     return db.cursor()
 
 
@@ -28,8 +32,10 @@ def test():
 
 @app.route("/api/signup", methods=["POST"])
 def signup():
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         signup_data = request.get_json()
 
         name = signup_data["name"]
@@ -81,13 +87,16 @@ def signup():
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/login", methods=["POST"])
 def login():
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         login_data = request.get_json()
 
         username = login_data["username"]
@@ -117,13 +126,16 @@ def login():
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/resources", methods=["GET"])
 def get_all_resources():
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         cur.execute(
             """
             SELECT r.RESOURCE_ID, r.USER_ID, r.TYPE, r.TITLE, r.LOCATION,
@@ -160,13 +172,16 @@ def get_all_resources():
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/resources/mine/<int:user_id>", methods=["GET"])
 def get_my_resources(user_id):
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         cur.execute(
             """
             SELECT r.RESOURCE_ID, r.USER_ID, r.TYPE, r.TITLE, r.LOCATION,
@@ -203,13 +218,16 @@ def get_my_resources(user_id):
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/resources", methods=["POST"])
 def add_resource():
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         data = request.get_json()
 
         user_id = data["user_id"]
@@ -249,13 +267,16 @@ def add_resource():
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/resources/<int:resource_id>", methods=["PUT"])
 def update_resource(resource_id):
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         data = request.get_json()
 
         if "title" not in data and "status" in data:
@@ -299,13 +320,16 @@ def update_resource(resource_id):
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/resources/<int:resource_id>", methods=["DELETE"])
 def delete_resource(resource_id):
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         cur.execute("DELETE FROM REQUESTS WHERE RESOURCE_ID = %s", (resource_id,))
         db.commit()
         cur.execute("DELETE FROM RESOURCES WHERE RESOURCE_ID = %s", (resource_id,))
@@ -320,13 +344,16 @@ def delete_resource(resource_id):
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/requests", methods=["POST"])
 def add_request():
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         data = request.get_json()
 
         sender_id = data.get("sender_id")
@@ -385,13 +412,16 @@ def add_request():
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/requests/user/<int:user_id>", methods=["GET"])
 def get_user_requests(user_id):
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         cur.execute(
             """
             SELECT req.REQUEST_ID, req.SENDER_ID, req.RECEIVER_ID, req.RESOURCE_ID,
@@ -443,13 +473,16 @@ def get_user_requests(user_id):
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 @app.route("/api/requests/<int:request_id>", methods=["PUT"])
 def update_request(request_id):
-    cur = get_cursor()
+    cur = None
     try:
+        cur = get_cursor()
+
         data = request.get_json()
         status = data.get("status")
 
@@ -478,7 +511,8 @@ def update_request(request_id):
             "message": str(e)
         }), 500
     finally:
-        cur.close()
+        if cur:
+            cur.close()
 
 
 
