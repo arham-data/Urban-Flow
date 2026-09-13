@@ -4,6 +4,26 @@
   padding-bottom: 8px;
 }
 
+/* Title */
+
+.ao-title {
+  margin-bottom: 28px;
+}
+
+.ao-title h1 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.ao-title p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
 .ao-layout {
   display: grid;
   grid-template-columns: 320px 1fr;

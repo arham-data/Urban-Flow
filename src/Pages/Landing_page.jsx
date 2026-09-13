@@ -638,7 +638,7 @@ function Resources() {
     const ctx = gsap.context(() => {
       if (reduced) return
 
-      const distance = () => trackRef.current.scrollWidth - window.innerWidth
+      const distance = () => trackRef.current.scrollWidth - window.innerWidth * 0.75
       const tween = gsap.to(trackRef.current, {
         x: () => -distance(),
         ease: "none",

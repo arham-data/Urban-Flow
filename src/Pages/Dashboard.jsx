@@ -50,9 +50,8 @@ function Dashboard(){
         <div className="Dashboard">
             <div className="db-menu">
                 <div className="db-brand">
-                    <span className="db-brand-mark"></span>
+                    <span className="db-brand-mark">U</span>
                     <span className="db-brand-name">UrbanFlow</span>
-                    <span className="db-brand-tag">v0.2</span>
                 </div>
 
                 <div className="menu-1">

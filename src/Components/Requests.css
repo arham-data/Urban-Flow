@@ -4,6 +4,26 @@
   padding-bottom: 8px;
 }
 
+/* Title */
+
+.req-title {
+  margin-bottom: 28px;
+}
+
+.req-title h1 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.req-title p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
 /* KPI strip */
 
 .req-kpis {

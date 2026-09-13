@@ -37,19 +37,24 @@
 .l-brand {
   font-family: var(--sans);
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 620;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
 .l-brand::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  background: var(--ink);
-  border-radius: 3px;
+  content: "U";
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--ink);
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .l-brand a {
