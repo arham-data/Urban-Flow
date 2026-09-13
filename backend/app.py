@@ -271,6 +271,23 @@ def update_resource(resource_id):
         }), 500
 
 
+@app.route("/api/resources/<int:resource_id>", methods=["DELETE"])
+def delete_resource(resource_id):
+    try:
+        cursor.execute("DELETE FROM RESOURCES WHERE RESOURCE_ID = %s", (resource_id,))
+        db.commit()
+        cursor.fetchall()
+
+        return jsonify({
+            "message": "Resource deleted successfully"
+        }), 200
+
+    except Exception as e:
+        return jsonify({
+            "message": str(e)
+        }), 500
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

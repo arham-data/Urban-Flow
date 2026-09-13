@@ -110,17 +110,14 @@ function MyResources(){
         }
     }
 
-    async function handleDeactivate(resourceId){
+    async function handleDelete(resourceId){
         const res = await fetch(`${API}/api/resources/${resourceId}`, {
-            method: "PUT",
-            headers: {"Content-type": "application/json"},
-            body: JSON.stringify({status: "unavailable"})
+            method: "DELETE",
+            headers: {"Content-type": "application/json"}
         })
 
         if (res.ok){
-            setResources(prev => prev.map(r =>
-                r.resource_id === resourceId ? {...r, status: "unavailable"} : r
-            ))
+            setResources(prev => prev.filter(r => r.resource_id !== resourceId))
         }
     }
 
@@ -212,13 +209,7 @@ function MyResources(){
                             <div className="mr-card-actions">
                                 <button className="mr-btn" disabled title="Coming soon">Edit</button>
                                 <button className="mr-btn mr-btn-secondary" disabled title="Coming soon">View</button>
-                                <button
-                                    className="mr-btn mr-btn-danger"
-                                    disabled={r.status === "unavailable"}
-                                    onClick={() => handleDeactivate(r.resource_id)}
-                                >
-                                    {r.status === "unavailable" ? "Delisted" : "Deactivate"}
-                                </button>
+                                <button className="mr-btn mr-btn-danger" onClick={() => handleDelete(r.resource_id)}>Delete</button>
                             </div>
                         </div>
                     ))}
