@@ -1309,6 +1309,10 @@ kbd {
   pointer-events: none;
 }
 
+.impact-block:last-of-type {
+  padding-bottom: 24vh;
+}
+
 .impact-index {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
