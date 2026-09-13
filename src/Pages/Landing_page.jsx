@@ -167,7 +167,6 @@ function Navbar({ visible }) {
         <a href="#resources">Resources</a>
         <a href="#features">How it works</a>
         <a href="#impact">Impact</a>
-        <a href="/login">Log in</a>
         <Link to="/signup" className="nav-cta">
           Get started
           <Arrow size={14} />
